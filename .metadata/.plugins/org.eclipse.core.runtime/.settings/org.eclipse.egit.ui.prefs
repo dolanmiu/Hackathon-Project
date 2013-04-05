@@ -1,0 +1,4 @@
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>DummyClass</message>\n<message>New_Example_Class int</message>\n<message>Android app commit</message>\n</messages>
+commit_dialog_push_upstream=true
+eclipse.preferences.version=1
+merge_mode=0
