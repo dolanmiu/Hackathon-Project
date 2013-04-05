@@ -873,3 +873,90 @@ org.eclipse.team.core.TeamException: Could not instantiate provider org.eclipse.
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 !SUBENTRY 1 org.eclipse.team.core 4 0 2013-04-05 17:02:09.335
 !MESSAGE Could not instantiate provider org.eclipse.egit.core.GitProvider for project HackTest.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-05 17:05:41.566
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-05 17:05:41.566
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:05:41.566
+!MESSAGE Software being installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:05:41.566
+!MESSAGE Missing requirement: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r) requires 'org.eclipse.team.core 3.6.100' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-05 17:05:41.572
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-05 17:05:41.572
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:05:41.572
+!MESSAGE Software being installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:05:41.573
+!MESSAGE Missing requirement: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r) requires 'org.eclipse.team.core 3.6.100' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-05 17:06:16.866
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-05 17:06:16.866
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:06:16.866
+!MESSAGE Software being installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:06:16.866
+!MESSAGE Missing requirement: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r) requires 'org.eclipse.team.core 3.6.100' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-05 17:06:16.870
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-05 17:06:16.870
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:06:16.870
+!MESSAGE Software being installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:06:16.870
+!MESSAGE Missing requirement: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r) requires 'org.eclipse.team.core 3.6.100' but it could not be found
+!SESSION 2013-04-05 17:07:04.671 -----------------------------------------------
+eclipse.buildId=I20120920-1300
+java.version=1.7.0_10-ea
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -vm /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin -keyring /Users/crashandburn4/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -clean -vm /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin -keyring /Users/crashandburn4/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-04-05 17:07:26.029
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.egit.ui 4 0 2013-04-05 17:07:57.446
+!MESSAGE https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:137)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:201)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:90)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2347)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2329)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:121)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:117)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.run(PullOperationUI.java:92)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:476)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:305)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1104)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 8 more
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2013-04-05 17:08:59.764
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://sourceforge.net/projects/eclipsenettools/files/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2013-04-05 17:08:59.765
+!MESSAGE No repository found at http://sourceforge.net/projects/eclipsenettools/files/.
+
+!ENTRY org.eclipse.ui 2 2 2013-04-05 17:14:17.350
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
