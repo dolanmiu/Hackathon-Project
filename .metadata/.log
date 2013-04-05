@@ -960,6 +960,7 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://so
 
 !ENTRY org.eclipse.ui 2 2 2013-04-05 17:14:17.350
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+<<<<<<< HEAD
 !SESSION 2013-04-05 17:14:19.958 -----------------------------------------------
 eclipse.buildId=I20120920-1300
 java.version=1.7.0_10-ea
@@ -1835,3 +1836,49 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://so
 !MESSAGE From: EGit Project Set Support 2.1.0.201209190230-r (org.eclipse.egit.psf.feature.group 2.1.0.201209190230-r)
 !SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-05 17:24:38.302
 !MESSAGE To: org.eclipse.egit.core [2.1.0,2.2.0)
+=======
+
+!ENTRY org.eclipse.egit.ui 4 0 2013-04-05 17:29:09.204
+!MESSAGE https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:137)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:245)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:90)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2347)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2329)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:121)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:115)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.run(PullOperationUI.java:90)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:476)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:305)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1104)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 8 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2013-04-05 17:31:49.235
+!MESSAGE https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:137)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:245)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:90)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2347)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2329)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:121)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:115)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.run(PullOperationUI.java:90)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/dolanmiu/Hackathon-Project.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:476)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:305)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1104)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:128)
+	... 8 more
+>>>>>>> 67f77b6371b4dcc4e3bc0af2b5aa6fcd30cdf9ff

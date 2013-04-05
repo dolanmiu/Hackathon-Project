@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:HackTest/bin/AndroidManifest.xml
 <?xml version="1.0" encoding="utf-8"?>
+=======
+<<<<<<< HEAD:.metadata/.plugins/org.eclipse.core.resources/.history/ee/00c8a335049e00121e38ceab0f8cbb4e
+>>>>>>> 67f77b6371b4dcc4e3bc0af2b5aa6fcd30cdf9ff
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hacktest"
     android:versionCode="1"
@@ -26,6 +30,7 @@
     </application>
 
 =======
+<<<<<<< HEAD
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hacktest"
     android:versionCode="1"
@@ -43,4 +48,33 @@
     </application>
 
 >>>>>>> origin/mike_test_branch:.metadata/.plugins/org.eclipse.core.resources/.history/ee/00c8a335049e00121e38ceab0f8cbb4e
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hacktest"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.hacktest.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+>>>>>>> 9f57df378699ef549cb2dc19ec5e484a799aa304:HackTest/bin/AndroidManifest.xml
+>>>>>>> 67f77b6371b4dcc4e3bc0af2b5aa6fcd30cdf9ff
 </manifest>
