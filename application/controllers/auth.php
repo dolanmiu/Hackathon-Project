@@ -27,10 +27,23 @@ class Auth_Controller extends Controller {
 
               $token = new OAuth2_Token_Access(array('access_token' => $params->access_token));
               $user = $provider->get_user_info($token);
+              $uid = (int) $user['uid'];
+              $existing_user = User::where('fb_uid', '=', $uid)->first();
 
-              // $existing_user = User::where('fb_uid', '=', )
-              // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
-              // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
+              if($existing_user)
+              {
+                Auth::login($existing_user->id);
+              }
+              
+              else
+              {
+                $user = new User;
+                $user->fb_uid = $uid;
+                $user->save();
+              }
+              
+              return Redirect::to_action('home@index');
+
               echo "<pre>";
               var_dump($user);
           }
