@@ -35,11 +35,15 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-           <li><a href="{{ URL::to_action("index@home") }}">Home</a></li>
+           <li><a href="{{ URL::home()  }}">Home</a></li>
            <li><a href="allcharities.php">All Charites</a></li>
+           @if(! Auth::check() )
            <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
-           <li><a href="about.php">About</a></li>
-        </ul>
+           @else
+            <li><a href="{{ URL::to_action('auth@logout') }}">Sign out</a></li>
+           @endif
+<!--            <li><a href="about.php">About</a></li>
+ -->        </ul>
         <h3 class="muted"><img src="/images/logo.png">Social Pledge</h3>
       </div>
 

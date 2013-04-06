@@ -1,9 +1,18 @@
 @layout('main')
 
 @section('content')
-	<h1>Title goes here</h1>
+
+@if(Auth::check())
+	<h1>Awesome, you're logged in</h1>
 	<div class="row">
 		<div class="span6">Button1</div>
 		<div class="span6">Button2</div>
 	</div>
+@else
+  <h1>You should sign up!</h1>
+  <div class="row">
+    <div class="span6">Button1</div>
+    <div class="span6">Button2</div>
+  </div>
+@endif
 @endsection

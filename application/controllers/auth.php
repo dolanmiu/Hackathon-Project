@@ -42,7 +42,7 @@ class Auth_Controller extends Controller {
                 $user->save();
               }
               
-              return Redirect::to_action('home@index');
+              return Redirect::home();
 
               echo "<pre>";
               var_dump($user);
@@ -54,5 +54,11 @@ class Auth_Controller extends Controller {
           }
 
         }
+  }
+
+  public function action_logout()
+  {
+    Auth::logout();
+    return Redirect::home();
   }
 }
