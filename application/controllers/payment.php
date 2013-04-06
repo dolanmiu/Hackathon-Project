@@ -102,7 +102,7 @@ class Payment_Controller extends Base_Controller {
       $client = Paymill::clientFactoryMethod($email,$card_holdername);
       $offer = Paymill::offerFactoryMethod($amount*100,$currency,$monthly." MONTH", "offer1");
       $payment = Paymill::paymentFactoryMethod($token, $client);
-      $subscription = Paymill::subscriptionFactoryMethod($client, $offer, $payment);
+      //$subscription = Paymill::subscriptionFactoryMethod($client, $offer, $payment);
 
       // echo "Transaction: ";
       // print_r($transaction);

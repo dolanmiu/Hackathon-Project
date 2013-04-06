@@ -16,9 +16,16 @@ class Charity_Controller extends Base_Controller
 
   public function action_donate($id)
   {
+    if(Input::get('amount'))
+    {
+      
+    }
+
    $charity = Charity::find($id);
-   return View::make('charity.single')->with('charity', $charity); 
+   return View::make('charity.single')
+    ->with('charity', $charity); 
   }
+
 
   public function action_edit($id)
   {

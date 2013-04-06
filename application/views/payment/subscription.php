@@ -100,7 +100,7 @@
         <input name="amount" class="amount" type="text" size="5" value="10.00"/></div>
         
     <div class="form-row"><label>Monthly (every n months)</label>
-        <input name="monthly" class="monthly" type="text" size="5" value="10.00"/></div>
+        <input name="monthly" class="monthly" type="text" size="5" value="1"/></div>
 
     <div class="form-row"><label>Currency</label>
         <input name="currency" class="currency" type="text" size="3" value="EUR"/></div>
