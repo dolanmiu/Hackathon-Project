@@ -38,3 +38,5 @@ return array(
 	'docs' => array('handles' => 'docs'),
   'laravel-oauth2' => array('auto'=>true),
 );
+
+'facebook-sdk' => array('auto' => true),
