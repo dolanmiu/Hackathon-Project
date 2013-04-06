@@ -32,12 +32,7 @@ class Payment_Controller extends Base_Controller {
 
   public function action_index()
   {
-    return View::make('home.index');
-  }
-
-  public function action_banana()
-  {
-    return  View::make('banana');
+    return View::make('payment.paymill_payment');
   }
 
 
