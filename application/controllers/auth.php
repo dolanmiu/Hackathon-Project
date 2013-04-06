@@ -23,8 +23,8 @@ class Auth_Controller extends Controller {
           {
               $params = $provider->access($_GET['code']);
 
-                  $token = new OAuth2_Token_Access(array('access_token' => $params->access_token));
-                  $user = $provider->get_user_info($token);
+              $token = new OAuth2_Token_Access(array('access_token' => $params->access_token));
+              $user = $provider->get_user_info($token);
 
               // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
               // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
@@ -37,6 +37,6 @@ class Auth_Controller extends Controller {
               show_error('That didnt work: '.$e);
           }
 
-      }
+        }
   }
 }

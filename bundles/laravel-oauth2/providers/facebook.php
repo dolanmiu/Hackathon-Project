@@ -6,7 +6,7 @@ class OAuth2_Provider_Facebook extends OAuth2_Provider
 
 	public $uid_key = 'uid';
 
-	public $scope = array('email', 'read_stream');
+	public $scope = array('email', );
 
 	public function url_authorize()
 	{
