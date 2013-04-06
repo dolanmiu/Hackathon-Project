@@ -72,7 +72,7 @@ return array(
 			'host'     => 'localhost',
 			'database' => 'pledgedb',
 			'username' => 'root',
-			'password' => '27386CBUWjti',
+			'password' => 'root',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
