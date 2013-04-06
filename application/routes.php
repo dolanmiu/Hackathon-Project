@@ -40,34 +40,45 @@ Route::get('/', function()
 });
 
 
-Route::get('charity/register', function()
-{
-
-	Paymill::clientFactoryMethod("email@server.com", "description");
-  return View::make('charity.register');
-});
-
 
 Route::get('test', function(){
+  // echo Session::get("token", "no token");
   $facebook = IoC::resolve('facebook-sdk');
-  print_r($facebook);
-  $user = $facebook->getUser();
+  $uid = $facebook->getUser();
 
-  if ($user) {
+  if($uid){
     try {
       // Proceed knowing you have a logged in user who's authenticated.
       $user_profile = $facebook->api('/me');
+      //print_r($user_profile);
+
+      $attachment = array(
+        'message' => "Usern",
+        'name' => "Name",
+        'link' => "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bananas.jpg",
+        'description' => "Usernam",
+        'picture'=> "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bananas.jpg",
+        );
+      //$two = $facebook->api('/'.$uid.'/feed', 'POST', $attachment);
+
+      //print_r($two);
+    
     } catch (FacebookApiException $e) {
       error_log($e);
+      print_r($e);
       $user = null;
     }
   }
-  echo "test";
+  else{
+    $loginUrl = $facebook->getLoginUrl();
+    return Redirect::to($loginUrl);
+  };
+
 });
 
 Route::controller('auth');
 Route::controller('donate');
-
+Route::controller('charity');
 Route::controller('payment');
 
 /*
