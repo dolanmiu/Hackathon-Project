@@ -39,6 +39,7 @@
            <li><a href="allcharities.php">All Charites</a></li>
            @if(! Auth::check() )
            <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
+           <li><a href="{{ URL::to('auth/fake') }}">Fake sign in</a></li>
            @else
             <li><a href="{{ URL::to_action('auth@logout') }}">Sign out</a></li>
            @endif

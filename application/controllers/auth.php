@@ -56,6 +56,13 @@ class Auth_Controller extends Controller {
         }
   }
 
+
+  public function action_fake()
+  {
+    Auth::login(1);
+    return Redirect::home();
+  }
+
   public function action_logout()
   {
     Auth::logout();
