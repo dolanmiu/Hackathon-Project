@@ -21,6 +21,7 @@ CREATE TABLE charities (
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fb_uid BIGINT,
+  paymill_id VARCHAR(40),
   updated_at TIMESTAMP,
   created_at TIMESTAMP,
   first_name VARCHAR(30),
