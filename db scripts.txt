@@ -36,6 +36,8 @@ CREATE TABLE users (
 
 CREATE TABLE charity_admins (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  updated_at TIMESTAMP,
+  created_at TIMESTAMP,
   user_id INT,
   FOREIGN KEY (user_id) REFERENCES users (id), 
   charity_id INT,
@@ -44,6 +46,8 @@ CREATE TABLE charity_admins (
 
 CREATE TABLE effects (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  updated_at TIMESTAMP,
+  created_at TIMESTAMP,
   charity_id INT,
   FOREIGN KEY (charity_id) REFERENCES charities (id),
   description VARCHAR(500),
@@ -55,6 +59,8 @@ CREATE TABLE effects (
 
 CREATE TABLE donations (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  updated_at TIMESTAMP,
+  created_at TIMESTAMP,
   charity_id INT,
   FOREIGN KEY (charity_id) REFERENCES charities (id),
   user_id INT,
@@ -68,7 +74,8 @@ CREATE TABLE donations (
 CREATE TABLE transactions  (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   amount FLOAT,
-  transaction_date TIMESTAMP,
+  updated_at TIMESTAMP,
+  created_at TIMESTAMP,
   donation_id INT,
   FOREIGN KEY (donation_id) REFERENCES donations (id)
 );
