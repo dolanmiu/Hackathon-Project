@@ -46,7 +46,9 @@ Route::get('charity/register', function()
 });
 
 
+
 Route::controller('auth');
+Route::controller('donate');
 
 Route::controller('payment');
 
