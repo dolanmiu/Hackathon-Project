@@ -1,6 +1,6 @@
 <?php
-class PaymillMethods {
-	Autoloader::directories(array(path('app').'config/paymill.php'));
+class Paymill {
+	//Autoloader::directories(array(path('app').'config/paymill.php'));
 
 static function offerFactoryMethod($amount,$currency,$interval,$name){
 $params = array(
