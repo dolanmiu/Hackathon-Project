@@ -15,6 +15,7 @@
     <link href="/assets/css/flat-ui.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/assets/css/slider.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -30,13 +31,18 @@
   </head>
 
   <body>
-
-    <div class="container">
+  <div class="container">
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-           <li><a href="{{ URL::home()  }}">Home</a></li>
-           <li><a href="allcharities.php">All Charites</a></li>
+           <li @if(isset($link) && $link=='home')
+            class='active' 
+            @endif
+            ><a href="{{ URL::home()  }}">Home</a></li>
+           <li @if(!isset($link))
+            class='active'
+            @endif
+            ><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
            @if(! Auth::check() )
              <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
              <li><a href="{{ URL::to('auth/fake') }}">Fake sign in</a></li>
@@ -45,7 +51,7 @@
            @endif
 <!--            <li><a href="about.php">About</a></li>
  -->        </ul>
-        <h3 class="muted"><img src="/images/logo.png">Social Pledge</h3>
+         <h3 class="muted"><a href="{{ URL::home() }}"><img src="{{ URL::to_asset('images/logo.png') }}"></a></h3>
       </div>
 
       <hr>
@@ -70,10 +76,10 @@
           <div class="span3">
             <h3>Site Map</h3>
             <ul>
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="allcharities.html">All Charites</a></li>
-              <li><a href="charityregister.html">Sign Up</a></li>
-              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="{{ URL::home() }}">Home</a></li>
+              <li><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
+              <li><a href="{{ URL::to_action('auth@session', array('facebook')) }}">Sign Up</a></li>
+              <li><a href="{{ URL::to_action('pages@about') }}">About</a></li>
             </ul>
           </div>
           <div class="span3">
@@ -89,6 +95,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="/assets/js/bootstrap-transition.js"></script>
     <script src="/assets/js/bootstrap-alert.js"></script>
     <script src="/assets/js/bootstrap-modal.js"></script>
@@ -101,10 +108,12 @@
     <script src="/assets/js/bootstrap-collapse.js"></script>
     <script src="/assets/js/bootstrap-carousel.js"></script>
     <script src="/assets/js/bootstrap-typeahead.js"></script>
-    
-    <!-- Load JS here for greater good =============================-->
-    <script src="/assets/js/jquery-1.8.2.min.js"></script>
-    <script src="/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
+   
+    <script src="/assets/js/bootstrap-slider.js"></script> 
+    <script>
+        $(function(){ $('.sl1').slider(); });
+    </script>  
+    <!-- Load JS here for greater good =============================-->    
     <script src="/assets/js/jquery.dropkick-1.0.0.js"></script>
     <script src="/assets/js/custom_checkbox_and_radio.js"></script>
     <script src="/assets/js/custom_radio.js"></script>
@@ -113,6 +122,11 @@
     <script src="/assets/js/jquery.placeholder.js"></script>
     <script src="http://vjs.zencdn.net/c/video.js"></script>
     <script src="/assets/js/application.js"></script>
+
+
+    @yield('scripts')
+
+
     <!--[if lt IE 8]>
       <script src="js/icon-font-ie7.js"></script>
       <script src="js/icon-font-ie7-24.js"></script>

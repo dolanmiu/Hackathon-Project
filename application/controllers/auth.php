@@ -14,8 +14,8 @@ class Auth_Controller extends Controller {
       //     'secret' => 'af535d7e7c6d4bbc1a352b39353adc07',
       // ));
       $provider = OAuth2::provider($provider, array(
-          'id' => Config::get('facebook.app_id'),
-          'secret' => Config::get('facebook.secret'),
+          'id'      => Config::get('facebook.app_id'),
+          'secret'  => Config::get('facebook.secret'),
       ));
 
 
@@ -31,6 +31,9 @@ class Auth_Controller extends Controller {
               $params = $provider->access($_GET['code']);
 
               $token = new OAuth2_Token_Access(array('access_token' => $params->access_token));
+
+              Session::put("access_token", $token);
+
               $user = $provider->get_user_info($token);
               $uid = (int) $user['uid'];
               $existing_user = User::where('fb_uid', '=', $uid)->first();

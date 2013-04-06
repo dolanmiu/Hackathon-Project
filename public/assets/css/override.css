@@ -15,6 +15,7 @@ body {
 .jumbotron {
 	margin: 60px 0;
 	text-align: center;
+	background:url("../img/glyphicons-halflings.png");
 }
 .jumbotron h1 {
 	font-size: 72px;
