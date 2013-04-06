@@ -12,4 +12,9 @@ class Charity extends Eloquent
    {
     return $this->has_many("Effect");
    }
+
+   public function donations()
+   {
+    return $this->has_many("Donation");
+   }
 }

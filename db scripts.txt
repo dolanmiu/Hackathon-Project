@@ -62,7 +62,7 @@ CREATE TABLE donations (
   amount FLOAT,
   start_date TIMESTAMP,
   end_date TIMESTAMP,
-  donation_frequency INT
+  frequency INT
 );
 
 CREATE TABLE transactions  (
