@@ -9,6 +9,20 @@
 @endif
 
 
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="assets/img/homepage-big1.jpg">
+        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+<!--       
       <div class="jumbotron">
         <img src="assets/img/homepage-jumbotron.jpg">
         <h1>Social Giving</h1>
@@ -16,7 +30,7 @@
         <a class="btn btn-large btn-success" href="#">I am a Charity</a>
         <a class="btn btn-large btn-success" href="#">I want to Donate</a>
       </div>
-
+ -->
       <hr>
 
       <div class="row-fluid marketing">
@@ -42,18 +56,4 @@
       </div><!-- /.row -->
 <hr class="featurette-divider">
 
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="assets/img/homepage-big1.jpg">
-        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      
 @endsection
