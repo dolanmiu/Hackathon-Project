@@ -22,6 +22,7 @@ class OAuth2_Provider_Facebook extends OAuth2_Provider
 	{
 		$url = 'https://graph.facebook.com/me?'.http_build_query(array(
 			'access_token' => $token->access_token,
+			'redirect_uri' => 'http://localhost/auth/session/facebook'
 		));
 
 		$user = json_decode(file_get_contents($url));
@@ -33,7 +34,7 @@ class OAuth2_Provider_Facebook extends OAuth2_Provider
 			'name' => $user->name,
 			'email' => $user->email,
 			'location' => $user->hometown->name,
-			'description' => $user->bio,
+			//'description' => $user->bio,
 			'image' => 'https://graph.facebook.com/me/picture?type=normal&access_token='.$token->access_token,
 			'urls' => array(
 			  'Facebook' => $user->link,
