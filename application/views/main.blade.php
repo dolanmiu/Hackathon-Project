@@ -95,7 +95,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/assets/js/jquery.js"></script>
-     <script src="/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="/assets/js/bootstrap-transition.js"></script>
     <script src="/assets/js/bootstrap-alert.js"></script>
     <script src="/assets/js/bootstrap-modal.js"></script>
@@ -109,13 +109,10 @@
     <script src="/assets/js/bootstrap-carousel.js"></script>
     <script src="/assets/js/bootstrap-typeahead.js"></script>
    
-   <script src="/assets/js/bootstrap-slider.js"></script> 
-  <script>
-      $(function(){
-        //window.prettyPrint && prettyPrint();
-          $('.sl1').slider();
-      });
-  </script>  
+    <script src="/assets/js/bootstrap-slider.js"></script> 
+    <script>
+        $(function(){ $('.sl1').slider(); });
+    </script>  
     <!-- Load JS here for greater good =============================-->    
     <script src="/assets/js/jquery.dropkick-1.0.0.js"></script>
     <script src="/assets/js/custom_checkbox_and_radio.js"></script>

@@ -18,6 +18,12 @@ class Charity_Controller extends Base_Controller
   {
    $charity = Charity::find($id);
    return View::make('charity.single')->with('charity', $charity); 
- }
+  }
+
+  public function action_edit($id)
+  {
+    $charity = Charity::find($id);
+    return View::make('charity.edit')->with('charity', $charity);    
+  }
 
 }
