@@ -75,7 +75,7 @@
 
 <div class="payment-errors"></div>
 
-<form id="payment-form" action="<?php echo URL::to_action("payment@submit");?>" method="POST">
+<form id="payment-form" action="<?php echo URL::to_action("payment@submitsubscription");?>" method="POST">
      <!-- Do not put "name" in input tags, safety measure -->
     <div class="form-row"><label>Card Number</label>
         <input class="card-number" type="text" size="20" value="4111111111111111"/></div>
@@ -98,6 +98,9 @@
 
     <div class="form-row"><label>Amount</label>
         <input name="amount" class="amount" type="text" size="5" value="10.00"/></div>
+        
+    <div class="form-row"><label>Monthly (every n months)</label>
+        <input name="monthly" class="monthly" type="text" size="5" value="10.00"/></div>
 
     <div class="form-row"><label>Currency</label>
         <input name="currency" class="currency" type="text" size="3" value="EUR"/></div>

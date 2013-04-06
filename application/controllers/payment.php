@@ -44,7 +44,7 @@ class Payment_Controller extends Base_Controller {
     return View::make("payment.test");
   }
 
-  public function action_submit()
+  public function action_submitsingle()
   {
 
     define('PAYMILL_API_HOST', 'https://api.paymill.com/v2/');
@@ -78,6 +78,34 @@ class Payment_Controller extends Base_Controller {
 
       echo "Transaction: ";
       print_r($transaction);
+
+    }
+  }
+    public function action_submitsubscription()
+  {
+    Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
+
+    // set_include_path(implode(PATH_SEPARATOR, array(
+    //   realpath(realpath(dirname(__FILE__)) . '/application/libraries/Paymill-PHP-master/lib'),
+    //   get_include_path(),
+    // )));
+    // echo "here";
+
+    $token = $_POST['paymillToken'];
+    $currency = Input::get('currency');
+    $amount = Input::get('amount');
+    $monthly = Input::get('monthly');
+    $email = Input::get('email');
+    $card_holdername = Input::get('card-holdername');
+    
+    if ($token) {
+      $client = Paymill::clientFactoryMethod($email,$card_holdername);
+      $offer = Paymill::offerFactoryMethod($amount*100,$currency,$monthly." MONTH", "offer1");
+      $payment = Paymill::paymentFactoryMethod($token, $client);
+      $subscription = Paymill::subscriptionFactoryMethod($client, $offer, $payment);
+
+      // echo "Transaction: ";
+      // print_r($transaction);
 
     }
   }
