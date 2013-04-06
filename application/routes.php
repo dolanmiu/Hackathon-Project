@@ -38,6 +38,7 @@ Route::get('/', function()
 });
 
 Route::controller('auth');
+Route::controller('payment');
 
 /*
 |--------------------------------------------------------------------------
