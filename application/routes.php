@@ -46,6 +46,22 @@ Route::get('charity/register', function()
 });
 
 
+Route::get('test', function(){
+  $facebook = IoC::resolve('facebook-sdk');
+  print_r($facebook);
+  $user = $facebook->getUser();
+
+  if ($user) {
+    try {
+      // Proceed knowing you have a logged in user who's authenticated.
+      $user_profile = $facebook->api('/me');
+    } catch (FacebookApiException $e) {
+      error_log($e);
+      $user = null;
+    }
+  }
+  echo "test";
+});
 
 Route::controller('auth');
 Route::controller('donate');
