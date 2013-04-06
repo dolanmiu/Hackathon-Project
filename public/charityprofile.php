@@ -38,7 +38,7 @@
       <li><a href="signin.php">Sign In</a></li>
       <li><a href="about.php">About</a></li>
     </ul>
-    <h3 class="muted"><img src="images/logo.png">Social Pledge</h3>
+    <h3 class="muted"><img src="images/logo.png"></h3>
   </div>
   <hr>
   <div class="hero-unit">
