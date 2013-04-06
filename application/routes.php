@@ -37,6 +37,13 @@ Route::get('/', function()
 	return View::make('home.index');
 });
 
+
+Route::get('charity/register', function()
+{
+  return View::make('charity.register');
+});
+
+
 Route::controller('auth');
 
 Route::controller('payment');
