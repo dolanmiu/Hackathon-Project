@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,51 +10,10 @@
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/override.css" rel="stylesheet">
     <!-- Loading Flat UI -->
     <link href="assets/css/flat-ui.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
-    
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 60px;
-      }
-
-      /* Custom container */
-      .container {
-        margin: 0 auto;
-        max-width: 1000px;
-      }
-      .container > hr {
-        margin: 60px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 80px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 100px;
-        line-height: 1;
-      }
-      .jumbotron .lead {
-        font-size: 24px;
-        line-height: 1.25;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-    </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -74,17 +34,18 @@
     <div class="container">
 
       <div class="masthead">
-      <ul class="nav nav-pills pull-right">
-           		<li><a href="index.html">Home</a></li>
-                <li><a href="allcharities.html">All Charites</a></li>
-                <li class="active"><a href="#">Sign Up</a></li>
-                <li><a href="about.html">About</a></li>
-        </ul><!-- /.navbar -->
+        <ul class="nav nav-pills pull-right">
+           <li><a href="index.php">Home</a></li>
+           <li><a href="allcharities.php">All Charites</a></li>
+           <li class="active"><a href="#">Sign In</a></li>
+           <li><a href="about.php">About</a></li>
+        </ul>
         <h3 class="muted"><img src="images/logo.png">Social Pledge</h3>
       </div>
-      
-      <!-- Jumbotron -->
-        <div class="hero-unit">
+
+      <hr>
+
+		<div class="hero-unit">
           <h1>Thanks for everything</h1>
           <p>Your help is greatly appreciated</p>
           <p>
@@ -93,9 +54,9 @@
             </a>
           </p>
         </div>
+
       <hr>
 
-      <!-- Example row of columns -->
       <div class="row-fluid">
       <div class="row">
       <form>
@@ -129,13 +90,12 @@
 		  </dl>         
         </div>
         <div class="span1"></div>
-      </div>
       </form>
+       </div>
+	</div>
       <hr>
 
-      <div class="footer">
-        <p>&copy; Company 2013</p>
-      </div>
+	<?php include 'footer.html'; ?>
 
     </div> <!-- /container -->
 
@@ -171,6 +131,5 @@
       <script src="js/icon-font-ie7.js"></script>
       <script src="js/icon-font-ie7-24.js"></script>
     <![endif]-->
-
   </body>
 </html>

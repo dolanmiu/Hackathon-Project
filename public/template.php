@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <meta charset="utf-8">
     <title>Social Pledge - Sharing is Caring</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,47 +9,10 @@
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/override.css" rel="stylesheet">
     <!-- Loading Flat UI -->
     <link href="assets/css/flat-ui.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
-    
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
-
-      /* Custom container */
-      .container {
-        margin: 0 auto;
-        max-width: 1000px;
-      }
-      .container > hr {
-        margin: 60px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-    </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -72,10 +34,10 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-           <li class="active"><a href="#">Home</a></li>
-           <li><a href="allcharities.html">All Charites</a></li>
-           <li><a href="charityregister.html">Sign Up</a></li>
-           <li><a href="about.html">About</a></li>
+           <li class="active"><a href="index.php">Home</a></li>
+           <li><a href="allcharities.php">All Charites</a></li>
+           <li><a href="signin.php">Sign In</a></li>
+           <li><a href="about.php">About</a></li>
         </ul>
         <h3 class="muted"><img src="images/logo.png">Social Pledge</h3>
       </div>
@@ -115,40 +77,8 @@
       </div>
 
       <hr>
-
-      <div class="footer">
-      <div class="row">
-        <div class="span3">
-        	<h3>Contact Us</h3>
-            <address>
-  				<strong>Twitter, Inc.</strong><br>
-  					795 Folsom Ave, Suite 600<br>
-  					San Francisco, CA 94107<br>
-  					<abbr title="Phone">P:</abbr> (123) 456-7890
-				</address>
- 
-			<address>
-  				<strong>Full Name</strong><br>
-  					<a href="mailto:#">first.last@example.com</a>
-			</address>
-        </div>
-        <div class="span3">
-        	<h3>Site Map</h3>
-            <ul>
-            	<li class="active"><a href="index.html">Home</a></li>
-           		<li><a href="allcharities.html">All Charites</a></li>
-           		<li><a href="charityregister.html">Sign Up</a></li>
-           		<li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-        <div class="span3">
-        <h3>FAQ</h3>
-        
-        </div>
-        </div>
-       	<p>&copy; Social Pledge 2013</p>
-
-      </div>
+    <?php include 'footer.html'; ?>
+      
 
     </div> <!-- /container -->
 
