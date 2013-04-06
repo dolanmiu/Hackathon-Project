@@ -28,6 +28,8 @@
 
                     // Token in das Formular einfügen damit es an den Server übergeben wird
                     form.append("<input type='hidden' name='paymillToken' value='" + token + "'/>");
+                    // form.append("<input type='hidden' name='amount' value='10.00'/>");
+                    // form.append("<input type='hidden' name='currency' value='EUR'/>");
 
                     form.get(0).submit();
                 }
@@ -84,6 +86,9 @@
     <div class="form-row"><label>Cardholder's Name</label>
         <input class="card-holdername" type="text" size="20" value="lala"/></div>
 
+    <div class="form-row"><label>E-mail</label>
+        <input name="email" class="email" type="text" size="20" value="lala"/></div>
+
     <div class="form-row"><label>Expiry date (MM/YYYY)</label>
         <input class="card-expiry-month" type="text" size="2" value="12"/>
 
@@ -92,10 +97,10 @@
         <input class="card-expiry-year" type="text" size="4" value="2015"/></div>
 
     <div class="form-row"><label>Amount</label>
-        <input class="amount" type="text" size="5" value="10.00"/></div>
+        <input name="amount" class="amount" type="text" size="5" value="10.00"/></div>
 
     <div class="form-row"><label>Currency</label>
-        <input class="currency" type="text" size="3" value="EUR"/></div>
+        <input name="currency" class="currency" type="text" size="3" value="EUR"/></div>
 
     <button class="submit-button" type="submit">Submit</button>
 </form>

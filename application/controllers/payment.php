@@ -29,9 +29,14 @@ class Payment_Controller extends Base_Controller {
   |   }
   |
   */
-  public function action_index()
+  public function action_singletransaction()
   {
-    return View::make("payment.paymill_payment");
+    return View::make("payment.transaction");
+  }
+
+  public function action_subscription()
+  {
+    return View::make("payment.subscription");
   }
 
   public function action_submit()
@@ -49,16 +54,20 @@ class Payment_Controller extends Base_Controller {
     // echo "here";
 
     $token = $_POST['paymillToken'];
+    $currency = $_POST['currency'];
+    $amount = $_POST['amount'];
 
     if ($token) {
       // require "Services/Paymill/Transactions.php";
       $transactionsObject = new Services_Paymill_Transactions(PAYMILL_API_KEY, PAYMILL_API_HOST);
 
       $params = array(
-        'amount'      => '4900',  // Cent!
-        'currency'    => 'EUR',   // ISO 4217
+        'amount'      => $amount*100,  // Cent!
+        'currency'    => $currency,   // ISO 4217
         'token'       => $token,
-        'description' => 'Test Transaction'
+        'description' => 'Test Transaction',
+        'client'      => 
+        // 'email' => 'person@mail.com'
       );
       $transaction = $transactionsObject->create($params);
 
