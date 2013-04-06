@@ -31,13 +31,18 @@
   </head>
 
   <body>
-
-    <div class="container">
+  <div class="container">
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-           <li><a href="{{ URL::home()  }}">Home</a></li>
-           <li><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
+           <li @if(isset($link) && $link=='home')
+            class='active' 
+            @endif
+            ><a href="{{ URL::home()  }}">Home</a></li>
+           <li @if(!isset($link))
+            class='active'
+            @endif
+            ><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
            @if(! Auth::check() )
              <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
              <li><a href="{{ URL::to('auth/fake') }}">Fake sign in</a></li>
@@ -71,10 +76,10 @@
           <div class="span3">
             <h3>Site Map</h3>
             <ul>
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="allcharities.html">All Charites</a></li>
-              <li><a href="charityregister.html">Sign Up</a></li>
-              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="{{ URL::home() }}">Home</a></li>
+              <li><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
+              <li><a href="{{ URL::to_action('auth@session', array('facebook')) }}">Sign Up</a></li>
+              <li><a href="{{ URL::to_action('pages@about') }}">About</a></li>
             </ul>
           </div>
           <div class="span3">

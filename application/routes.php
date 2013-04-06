@@ -35,8 +35,7 @@
 Route::get('/', function()
 {
 	$charities = Charity::all();
-
-	return View::make('home.index')->with('charities', $charities);
+	return View::make('home.index')->with('charities', $charities)->with('link', 'home');
 });
 
 
