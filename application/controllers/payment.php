@@ -39,6 +39,11 @@ class Payment_Controller extends Base_Controller {
     return View::make("payment.subscription");
   }
 
+  public function action_test()
+  {
+    return View::make("payment.test");
+  }
+
   public function action_submit()
   {
 
@@ -66,7 +71,7 @@ class Payment_Controller extends Base_Controller {
         'currency'    => $currency,   // ISO 4217
         'token'       => $token,
         'description' => 'Test Transaction',
-        'client'      => 
+        // 'client'      => 
         // 'email' => 'person@mail.com'
       );
       $transaction = $transactionsObject->create($params);

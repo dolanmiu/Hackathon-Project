@@ -42,6 +42,7 @@ Route::get('/', function()
 
 Route::get('charity/register', function()
 {
+	PaymillMethods::clientFactoryMethod("email@server.com","description");
   return View::make('charity.register');
 });
 
