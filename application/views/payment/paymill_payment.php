@@ -73,8 +73,8 @@
 
 <div class="payment-errors"></div>
 
-<form id="payment-form" action="request.php" method="POST">
-
+<form id="payment-form" action="<?php echo URL::to_action("payment@submit");?>" method="POST">
+     <!-- Do not put "name" in input tags, safety measure -->
     <div class="form-row"><label>Card Number</label>
         <input class="card-number" type="text" size="20" value="4111111111111111"/></div>
 

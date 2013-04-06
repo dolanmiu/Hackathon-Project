@@ -29,10 +29,43 @@ class Payment_Controller extends Base_Controller {
   |   }
   |
   */
-
   public function action_index()
   {
-    return View::make('payment.paymill_payment');
+    return View::make("payment.paymill_payment");
+  }
+
+  public function action_submit()
+  {
+
+    define('PAYMILL_API_HOST', 'https://api.paymill.com/v2/');
+    define('PAYMILL_API_KEY', 'e213b1e800cda98c29fb6bd7d3bde9df');
+
+    Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
+
+    // set_include_path(implode(PATH_SEPARATOR, array(
+    //   realpath(realpath(dirname(__FILE__)) . '/application/libraries/Paymill-PHP-master/lib'),
+    //   get_include_path(),
+    // )));
+    // echo "here";
+
+    $token = $_POST['paymillToken'];
+
+    if ($token) {
+      // require "Services/Paymill/Transactions.php";
+      $transactionsObject = new Services_Paymill_Transactions(PAYMILL_API_KEY, PAYMILL_API_HOST);
+
+      $params = array(
+        'amount'      => '4900',  // Cent!
+        'currency'    => 'EUR',   // ISO 4217
+        'token'       => $token,
+        'description' => 'Test Transaction'
+      );
+      $transaction = $transactionsObject->create($params);
+
+      echo "Transaction: ";
+      print_r($transaction);
+
+    }
   }
 
 
