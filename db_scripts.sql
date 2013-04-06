@@ -39,9 +39,9 @@ CREATE TABLE charity_admins (
   updated_at TIMESTAMP,
   created_at TIMESTAMP,
   user_id INT,
-  FOREIGN KEY (user_id) REFERENCES users (id), 
+  FOREIGN KEY (user_id) REFERENCES users (id)  ON DELETE CASCADE, 
   charity_id INT,
-  FOREIGN KEY (charity_id) REFERENCES charities (id)
+  FOREIGN KEY (charity_id) REFERENCES charities (id)  ON DELETE CASCADE
 );
 
 CREATE TABLE effects (
@@ -49,7 +49,7 @@ CREATE TABLE effects (
   updated_at TIMESTAMP,
   created_at TIMESTAMP,
   charity_id INT,
-  FOREIGN KEY (charity_id) REFERENCES charities (id),
+  FOREIGN KEY (charity_id) REFERENCES charities (id) ON DELETE CASCADE,
   description VARCHAR(500),
   min_amount FLOAT,
   max_amount FLOAT,
@@ -62,9 +62,9 @@ CREATE TABLE donations (
   updated_at TIMESTAMP,
   created_at TIMESTAMP,
   charity_id INT,
-  FOREIGN KEY (charity_id) REFERENCES charities (id),
+  FOREIGN KEY (charity_id) REFERENCES charities (id) ON DELETE CASCADE,
   user_id INT,
-  FOREIGN KEY (user_id) REFERENCES users (id),
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
   amount FLOAT,
   start_date TIMESTAMP,
   end_date TIMESTAMP,
@@ -77,5 +77,5 @@ CREATE TABLE transactions  (
   updated_at TIMESTAMP,
   created_at TIMESTAMP,
   donation_id INT,
-  FOREIGN KEY (donation_id) REFERENCES donations (id)
+  FOREIGN KEY (donation_id) REFERENCES donations (id) ON DELETE CASCADE
 );
