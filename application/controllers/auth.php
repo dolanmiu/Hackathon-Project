@@ -9,10 +9,15 @@ class Auth_Controller extends Controller {
 
       Bundle::start('laravel-oauth2');
 
+      // $provider = OAuth2::provider($provider, array(
+      //     'id' => '517608504962463',
+      //     'secret' => 'af535d7e7c6d4bbc1a352b39353adc07',
+      // ));
       $provider = OAuth2::provider($provider, array(
-          'id' => '517608504962463',
-          'secret' => 'af535d7e7c6d4bbc1a352b39353adc07',
+          'id' => Config::get('facebook.app_id'),
+          'secret' => Config::get('facebook.secret'),
       ));
+
 
       if ( ! isset($_GET['code']))
       {
@@ -54,6 +59,13 @@ class Auth_Controller extends Controller {
           }
 
         }
+  }
+
+
+  public function action_fake()
+  {
+    Auth::login(1);
+    return Redirect::home();
   }
 
   public function action_logout()
