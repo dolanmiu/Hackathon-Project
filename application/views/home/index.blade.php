@@ -15,4 +15,10 @@
     <div class="span6">Button2</div>
   </div>
 @endif
+
+<ul>
+@foreach($charities as $c)
+	<li>{{ $c->name }}</li>	
+@endforeach
+</ul>
 @endsection

@@ -34,7 +34,9 @@
 
 Route::get('/', function()
 {
-	return View::make('home.index');
+	$charities = Charity::all();
+
+	return View::make('home.index')->with('charities', $charities);
 });
 
 
