@@ -4,6 +4,9 @@ class Auth_Controller extends Controller {
 
   public function action_session($provider)
   {
+
+      $provider = 'facebook';
+
       Bundle::start('laravel-oauth2');
 
       $provider = OAuth2::provider($provider, array(
@@ -18,7 +21,6 @@ class Auth_Controller extends Controller {
       }
       else
       {
-          // Howzit?
           try
           {
               $params = $provider->access($_GET['code']);
@@ -26,6 +28,7 @@ class Auth_Controller extends Controller {
               $token = new OAuth2_Token_Access(array('access_token' => $params->access_token));
               $user = $provider->get_user_info($token);
 
+              // $existing_user = User::where('fb_uid', '=', )
               // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
               // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
               echo "<pre>";
