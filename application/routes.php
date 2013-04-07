@@ -42,27 +42,30 @@ Route::get('/', function()
 
 Route::get('test', function(){
   // echo Session::get("token", "no token");
-  $facebook = IoC::resolve('facebook-sdk');
-  $uid = $facebook->getUser();
+  // $facebook = IoC::resolve('facebook-sdk');
+  // $uid = $facebook->getUser();
 
-  if($uid){
-    try {
-      // Proceed knowing you have a logged in user who's authenticated.
-      $location = "". $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
-      print_r($location);
+  // if($uid){
+  //   try {
+  //     // Proceed knowing you have a logged in user who's authenticated.
+  //     $location = "". $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
+  //     print_r($location);
 
       
     
-    } catch (FacebookApiException $e) {
-      error_log($e);
-      print_r($e);
-      $user = null;
-    }
-  }
-  else{
-    $loginUrl = $facebook->getLoginUrl();
-    return Redirect::to($loginUrl);
-  };
+  //   } catch (FacebookApiException $e) {
+  //     error_log($e);
+  //     print_r($e);
+  //     $user = null;
+  //   }
+  // }
+  // else{
+  //   $loginUrl = $facebook->getLoginUrl();
+  //   return Redirect::to($loginUrl);
+  // };
+  $city = 'Cambridge, Cambridgeshire';
+ echo Google::lookup($city);
+  echo 'done';
 
 });
 
