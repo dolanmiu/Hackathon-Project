@@ -55,7 +55,8 @@
 <hr>
 <div class="indexbanner">
 <!--<div class="row-fluid indexbanner"> -->
-  <img class="screenbanner" src="assets/img/homepage-jumbotron.png">
+	<div class="bannerpattern"></div>
+  <!--<img class="screenbanner" src="assets/img/homepage-jumbotron.png">-->
   <div class="row">
     <div class="span3"> <img class="img-circle" data-src="holder.js/140x140">
       <h2>Who are we?</h2>
