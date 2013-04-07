@@ -3,6 +3,10 @@
 	text-align: left;
 }
 
+.picbox {
+	margin: auto;
+}
+
 h7.head {
 	text-align: left;
 	text-decoration: underline;
