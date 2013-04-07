@@ -44,13 +44,13 @@
 <div class="featurette"> <img class="featurette-image pull-right" src="assets/img/homepage-big1.jpg">
   <h2 class="featurette-heading">Raise money. <span class="muted">To support those in need.</span></h2>
   <a class="btn btn-large btn-success" href="#">I am a Charity</a>
-  <p class="lead">Is your charity looking for funding? Why not join our online donation system? It’s easy, safe and secure! Create your page and start raising money right now!</p>
+  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 </div>
 <hr class="featurette-divider">
 <div class="featurette">
   <h2 class="featurette-heading">Donate money. <span class="muted">Do good, feel good.</span></h2>
   <a class="btn btn-large btn-success" href="#">I want to Donate</a>
-  <p class="lead">By simply click on button above, find out the charity you are interested in and support them. Your personal information is secure, and your donation will be shared on Facebook to spread the love!</p>
+  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 </div>
 <hr>
 <div class="indexbanner">
