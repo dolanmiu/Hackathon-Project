@@ -77,6 +77,31 @@ class Paymill{
         $subscription        = $subscriptionsObject->delete($subscriptionid);
 
     }
+
+    static function getClient($clientid) {
+        Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
+        $clients = $clientsObject->getOne($clientid);
+        return $client;
+    }
+
+    static function getSubscription($subscriptionid) {
+        Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
+        $subscription = $clientsObject->getOne($subscriptionid);
+        return $subscription;
+    }
+
+    static function getOffer($offerid) {
+        Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
+        $offer = $clientsObject->getOne($offerid);
+        return $offer;
+    }
+
+    static function getPayment($paymentid) {
+        Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
+        $payment = $clientsObject->getOne($paymentid);
+        return $payment;
+    }
+
     static function test($client) {
         echo '<pre>';
         print_r($client);

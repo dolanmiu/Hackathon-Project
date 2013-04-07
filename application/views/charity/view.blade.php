@@ -39,7 +39,7 @@
                   <input class="card-cvc" type="text" size="4" value="111"/></div>
 
               <div class="form-row"><label>Cardholder's Name</label>
-                  <input class="card-holdername" type="text" size="20" value="lala"/></div>
+                  <input class="card-holdername" name="card-holdername" type="text" size="20" value="lala"/></div>
 
               <div class="form-row"><label>E-mail</label>
                   <input name="email" class="email" type="text" size="20" value="lala"/></div>
@@ -72,7 +72,6 @@
               </div>
             </div>
 
-          </form>
 
 
 
@@ -106,6 +105,8 @@
                 </div>
               </dd>
             </dl>
+                      </form>
+
             </div>
 
         </div>
