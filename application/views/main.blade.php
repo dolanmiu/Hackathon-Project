@@ -86,8 +86,18 @@
     <div class="span3">
       <h3>Site Map</h3>
       <ul>
+<<<<<<< HEAD
         <li><a href="/">Home</a></li>
         <li><a href="/charity/index">All Charities</a></li>
+=======
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="allcharities.html">All Charities</a></li>
+         @if(! Auth::check() )
+             <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
+           @else
+            <li><a href="{{ URL::to_action('auth@logout') }}">Sign out</a></li>
+           @endif
+>>>>>>> index + main
       </ul>
     </div>
     <div class="span3">
