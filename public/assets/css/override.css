@@ -41,9 +41,19 @@ img {
 	-ms-interpolation-mode: bicubic;
 }
 
+.bannerpattern {
+	  position: absolute;
+	  z-index: -10;
+      top: 10;
+      left: 0;
+	  width: 100%;
+	  height: 300px;
+	background:url("../img/homepage-jumbotron.png");
+}
+
 .indexbanner img {
 	max-width:none;
-	width: auto\9;
+	width: auto;
  	height: auto;
   	vertical-align: middle;
   	border: 0;
