@@ -91,17 +91,56 @@ class Charity_Controller extends Base_Controller
         $donation = new Donation;
 
         $donation->charity_id = $id;
+        $donation->start_date = new DateTime;
         $donation->paymill_subscription_id = $subscription['id'];
         $donation->user_id = Auth::user()->id;
         $donation->amount = $amount;
         $donation->save();
 
+        $notification = new Notification;
+        $notification->recurring($id, $amount);
+
+        return Redirect::to_action("charity@notify", array($amount, $id));
+
       }
+    }
+  }
 
 
 
-    // echo $id;
-    //return Redirect::back();
+
+  public function action_notify($amount, $charity_id)
+  {
+    $facebook = IoC::resolve('facebook-sdk');
+    $uid = $facebook->getUser();
+
+    if($uid){
+      try {
+        $charity = Charity::find($charity_id)->name;
+        $first_name = Auth::user()->first_name;
+        $effect = Effect::where('min_amount', '<', $amount)->first();
+        $attachment = array(
+          'message' => $first_name . " donated £" . $amount . " to " . $charity,
+          'name' => "Help " . $charity . " on Social Pledge",
+          'link' => "http://socialpledge.eu/charity/" . $charity_id,
+          'description' => "With £" . $amount . " " . $first_name . " is helping " . $charity . " do amazing things for people who need it the most" ,
+          'picture'=> "http://socialpledge.eu/assets/img/homepage-big1.jpg",
+          );
+        $req = $facebook->api('/'.$uid.'/feed', 'POST', $attachment);
+        
+        Session::flash('amount_donated', $amount);
+
+        return Redirect::to_action('');
+
+      } catch (FacebookApiException $e) {
+        error_log($e);
+        print_r($e);
+        $user = null;
+      }
+    }
+    else{
+      $loginUrl = $facebook->getLoginUrl();
+      return Redirect::to($loginUrl);
     }
   }
 

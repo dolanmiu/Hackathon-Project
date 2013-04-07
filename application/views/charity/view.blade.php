@@ -81,8 +81,8 @@
               <dt>Type of donation</dt>
               <dd>
                 <select name="donationType" id="donationType">
-                  <option value='single'>single donation </option>
                   <option value='recurring'>monthly donation </option>
+                  <option value='single'>single donation </option>
                 </select>
 
               </dd>

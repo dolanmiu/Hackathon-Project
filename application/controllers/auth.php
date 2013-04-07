@@ -47,6 +47,7 @@ class Auth_Controller extends Controller {
               {
                 $user = new User;
                 $user->fb_uid = $uid;
+                $user->first_name = $user['first_name'];
                 $user->save();
               }
               

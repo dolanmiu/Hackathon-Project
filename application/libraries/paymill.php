@@ -80,25 +80,28 @@ class Paymill{
 
     static function getClient($clientid) {
         Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
-        $clients = $clientsObject->getOne($clientid);
+        $apiKey        = Config::get('paymill.api_key');
+        $apiEndpoint   = Config::get('paymill.api_host');
+        $clientsObject = new Services_Paymill_Clients($apiKey, $apiEndpoint);
+        $client = $clientsObject->getOne($clientid);
         return $client;
     }
 
     static function getSubscription($subscriptionid) {
         Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
-        $subscription = $clientsObject->getOne($subscriptionid);
+        $subscription = $subscriptionsObject->getOne($subscriptionid);
         return $subscription;
     }
 
     static function getOffer($offerid) {
         Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
-        $offer = $clientsObject->getOne($offerid);
+        $offer = $offersObject->getOne($offerid);
         return $offer;
     }
 
     static function getPayment($paymentid) {
         Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
-        $payment = $clientsObject->getOne($paymentid);
+        $payment = $paymentsObject->getOne($paymentid);
         return $payment;
     }
 
