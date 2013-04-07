@@ -1,11 +1,24 @@
 // Some general UI pack related JS
 
-$(function () {
-    // Custom selects
-    $("select").dropkick();
-});
-
 $(document).ready(function() {
+
+    $('#donationType').dropkick({
+      change: function (value, label) {
+        console.log(value,label);
+        var showSlider = $('#donationType').val() == "recurring";
+        if(!showSlider)
+        {
+            $('.monthly').parents('.form-row').hide();
+        }
+        else
+        {
+            $('.monthly').parents('.form-row').show();
+
+        }
+        $('#frequencySlider').toggle(showSlider);
+      }
+    });
+
     // Todo list
     $(".todo li").click(function() {
         $(this).toggleClass("todo-done");

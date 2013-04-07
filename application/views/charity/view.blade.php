@@ -25,7 +25,9 @@
           <h1>{{ $charity->name }}</h1>
           <h3>What we are about</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <h3>Please Donate</h3>
+          <h3>Donate</h3>
+
+          @if(Auth::check())
           <div class="span12">
            <form id='payment-form' method='post' action='{{ URL::to_action('charity@donate', array($charity->id)) }}'>
 
@@ -40,6 +42,10 @@
               <div class="modal-body">
 
 
+
+              <div class="form-row"><label>E-mail</label>
+                  <input name="email" class="email" type="text" size="20" value="{{ Auth::user()->email }}"/></div>
+
                <!-- Do not put "name" in input tags, safety measure -->
               <div class="form-row"><label>Card Number</label>
                   <input class="card-number" type="text" size="20" value="4111111111111111"/></div>
@@ -50,9 +56,6 @@
               <div class="form-row"><label>Cardholder's Name</label>
                   <input class="card-holdername" name="card-holdername" type="text" size="20" value="lala"/></div>
 
-              <div class="form-row"><label>E-mail</label>
-                  <input name="email" class="email" type="text" size="20" value="lala"/></div>
-
               <div class="form-row"><label>Expiry date (MM/YYYY)</label>
                   <input class="card-expiry-month" type="text" size="2" value="12"/>
 
@@ -60,24 +63,21 @@
 
                   <input class="card-expiry-year" type="text" size="4" value="2015"/></div>
 
-              <div class="form-row"><label>Amount</label>
-                  <input name="amount" class="amount" type="text" size="5" value="10.00"/></div>
-                  
+ <!--              <div class="form-row"><label>Amount</label>
+                  <input name="amount" class="amount" type="text" size="5" value="10.00"/></div> -->
+<!--                   
               <div class="form-row"><label>Monthly (every n months)</label>
-                  <input name="monthly" class="monthly" type="text" size="5" value="1"/></div>
+                  <input name="monthly" class="monthly" type="text" size="5" value="1"/></div> -->
 
-              <div class="form-row"><label>Currency</label>
-                  <input name="currency" class="currency" type="text" size="3" value="EUR"/></div>
-
-              <button class="submit-button" type="submit">Submit</button>
-
+<!--               <div class="form-row"><label>Currency</label>
+                  <input name="currency" class="currency" type="text" size="3" value="EUR"/></div> -->
 
 
 
               </div>
               <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                <button class="btn btn-primary">Save changes</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <button class="btn btn-primary">Submit</button>
               </div>
             </div>
 
@@ -90,33 +90,36 @@
               <dt>Type of donation</dt>
               <dd>
                 <select name="donationType" id="donationType">
-                  <option value='recurring'>monthly donation </option>
-                  <option value='single'>single donation </option>
+                  <option value='recurring'> Monthly donation </option>
+                  <option value='single'> One-off donation </option>
                 </select>
 
               </dd>
-              <dt>Amount</dt>
-              <dd>
+              <dt style='margin-top:40px;'>Amount</dt>
+              <dd style='margin-top:40px;'>
                 <div class="input-prepend input-append"> <span class="add-on">£</span>
-                  <input class="span10" id="appendedPrependedInput" type="text" name='amount' value='10'>
+                  <input class="span10" id="appendedPrependedInput" type="text" name='amount' class='amount' value='10'>
                   <span class="add-on">.00</span> </div>
               </dd>
-              <div id="frequencySlider">
-              <dt>How often (Monthly only)</dt>
+              <div id="frequencySlider" style='margin-top:40px;'>
+              <dt>How often? (interval in months)</dt>
                 <dd>
-                  <input type="text" class="sl1" value="" data-slider-min="1" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
+                  <input type="text" class="sl1 monthly" name='monthly' value="" data-slider-min="1" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
                 </dd>
               </div>
               <dt></dt>
               <dd>
                 <div class="span1 offset8">
-                  <a href="#myModal" role="button" class="btn" data-toggle="modal">Submit</a>
+                  <a href="#myModal" role="button" class="btn" data-toggle="modal">Continue</a>
                 </div>
               </dd>
             </dl>
                       </form>
 
             </div>
+            @else
+              You need to sign in to make a donation...
+            @endif
 
         </div>
       </div>
@@ -127,16 +130,6 @@
 
   @endsection
   @section('scripts')
-    
-    <script>
-      $(function(){
-        // $('#dk_container_donationType').on('mouseup', function(){
-        //   var showSlider = $('#donationType').val() == "recurring";
-        //   console.log($('#donationType').val())
-        //   $('#frequencySlider').toggle(showSlider);
-        // });
-      });
-    </script>
 
 
     <script type="text/javascript">
