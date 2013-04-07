@@ -14,8 +14,6 @@ class Charity_Controller extends Base_Controller
     return View::make('charity.register');  
   }
 
-
-
   public function action_view($id)
   {
     $charity = Charity::find($id);
@@ -30,6 +28,12 @@ class Charity_Controller extends Base_Controller
     $isRecurring = Input::get('donationType') == "recurring";
 
     $charity = Charity::find($id);
+
+    $token = $_POST['paymillToken'];
+      $currency = "EUR"; //$_POST['currency'];
+      $amount = $_POST['amount'];
+      $email = Input::get('email');
+      $card_holdername = Input::get('card-holdername');
     
     if (!$isRecurring) {
       define('PAYMILL_API_HOST', 'https://api.paymill.com/v2/');
@@ -37,9 +41,19 @@ class Charity_Controller extends Base_Controller
 
       Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
 
-      $token = $_POST['paymillToken'];
-      $currency = $_POST['currency'];
-      $amount = $_POST['amount'];
+      $current_user = Auth::user();
+      $charity=Charity::find($id);
+      if(isset($current_user->paymill_id))
+      {
+        $client = Paymill::getClient($current_user->paymill_id);
+      }
+      else
+      {
+        $client = Paymill::clientFactoryMethod($email, $card_holdername);
+        $current_user->paymill_id = $client['id'];
+        $charity->people_total+=1;
+        $current_user->save();
+      }
 
       if ($token) {
       // require "Services/Paymill/Transactions.php";
@@ -51,7 +65,8 @@ class Charity_Controller extends Base_Controller
         'description' => 'Test Transaction',
         );
         $transaction = $transactionsObject->create($params);
-
+        $charity->donation_total+=$amount;
+        $charity->save();
         echo "<pre> ";
         print_r($transaction);
 
@@ -61,14 +76,8 @@ class Charity_Controller extends Base_Controller
 
     else {
       Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
-
-      $token = $_POST['paymillToken'];
-      $currency = Input::get('currency');
-      $amount = Input::get('amount');
       $monthly = Input::get('monthly');
-      $email = Input::get('email');
-      $card_holdername = Input::get('card-holdername');
-
+      
       if ($token) {
 
         $current_user = Auth::user();
@@ -80,12 +89,15 @@ class Charity_Controller extends Base_Controller
         {
           $client = Paymill::clientFactoryMethod($email, $card_holdername);
           $current_user->paymill_id = $client['id'];
+          $charity->people_total+=1;
           $current_user->save();
         }
         // Sanity check
         $offer = Paymill::offerFactoryMethod($amount*100,$currency,$monthly." MONTH", "offer1");
         $payment = Paymill::paymentFactoryMethod($token, $client);
         $subscription = Paymill::subscriptionFactoryMethod($client, $offer, $payment);
+        $charity->donation_total+=$amount;
+        $charity->save();
 
 
         $donation = new Donation;
@@ -130,7 +142,7 @@ class Charity_Controller extends Base_Controller
         
         Session::flash('amount_donated', $amount);
 
-        return Redirect::to_action('');
+        return Redirect::to_action('charity@view', array($charity_id));
 
       } catch (FacebookApiException $e) {
         error_log($e);

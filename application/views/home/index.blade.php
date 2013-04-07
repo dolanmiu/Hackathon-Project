@@ -12,13 +12,13 @@
 <hr class="featurette-divider">
 <div class="featurette"> <img class="featurette-image pull-right" src="assets/img/homepage-big1.jpg">
   <h2 class="featurette-heading">Raise money. <span class="muted">To support those in need.</span></h2>
-  <a class="btn btn-large btn-success" href="#">I am a Charity</a>
+  <a class="btn btn-large btn-success" href="{{ URL::to_action('charity@create') }}">I am a Charity</a>
   <p class="lead">Is your charity looking for funding? Why not join our online donation system? It’s easy, safe and secure! Create your page and start raising money right now!</p>
 </div>
 <hr class="featurette-divider">
 <div class="featurette">
   <h2 class="featurette-heading">Donate money. <span class="muted">Do good, feel good.</span></h2>
-  <a class="btn btn-large btn-success" href="#">I want to Donate</a>
+  <a class="btn btn-large btn-success" href="{{ URL::to_action('charity@index') }}">I want to Donate</a>
   <p class="lead">By simply click on button above, find out the charity you are interested in and support them. Your personal information is secure, and your donation will be shared on Facebook to spread the love! We believe helping others is the ultimate form of positive karma. Do good for us all, whether it be saving a staring child, or contributing to the cure to cancer.</p>
 </div>
 <hr>
