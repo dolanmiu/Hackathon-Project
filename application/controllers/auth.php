@@ -44,10 +44,11 @@ class Auth_Controller extends Controller {
               }
               
               else
-              {
+             {
+		$name_split = explode(" ", $fbuser['name']); 
                 $user = new User;
                 $user->fb_uid = $uid;
-                $user->first_name = explode(" ", $fbuser['name'])[0];
+                $user->first_name = $name_split[0]; 
                 $user->save();
               }
               
