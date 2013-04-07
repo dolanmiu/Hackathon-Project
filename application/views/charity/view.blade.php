@@ -13,6 +13,15 @@
       <div class="span10 offset1">
         <div class="span2"> <img src="http://appsforipads.net/wp-content/uploads/2011/01/Free_Google-150x150.png" class="img-polaroid" width="150" height="150"> </div>
         <div class="span8">
+
+          @if(Session::has('amount_donated'))
+            <div class="hero-unit">
+              <h1>Thank you for your donation!</h1>
+              <p>It means a lot to us.</p>
+            </div>
+          @endif
+
+
           <h1>{{ $charity->name }}</h1>
           <h3>What we are about</h3>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -39,7 +48,7 @@
                   <input class="card-cvc" type="text" size="4" value="111"/></div>
 
               <div class="form-row"><label>Cardholder's Name</label>
-                  <input class="card-holdername" type="text" size="20" value="lala"/></div>
+                  <input class="card-holdername" name="card-holdername" type="text" size="20" value="lala"/></div>
 
               <div class="form-row"><label>E-mail</label>
                   <input name="email" class="email" type="text" size="20" value="lala"/></div>
@@ -72,7 +81,6 @@
               </div>
             </div>
 
-          </form>
 
 
 
@@ -82,8 +90,8 @@
               <dt>Type of donation</dt>
               <dd>
                 <select name="donationType" id="donationType">
-                  <option value='single'>single donation </option>
                   <option value='recurring'>monthly donation </option>
+                  <option value='single'>single donation </option>
                 </select>
 
               </dd>
@@ -106,6 +114,8 @@
                 </div>
               </dd>
             </dl>
+                      </form>
+
             </div>
 
         </div>

@@ -42,19 +42,6 @@
         </ul>
         <h3 class="muted"><img src="images/logo.png">Social Pledge</h3>
       </div>
-
-      <hr>
-
-		<div class="hero-unit">
-          <h1>Thanks for everything</h1>
-          <p>Your help is greatly appreciated</p>
-          <p>
-            <a class="btn btn-primary btn-large">
-              Learn more
-            </a>
-          </p>
-        </div>
-
       <hr>
 
       <div class="row-fluid">
@@ -85,6 +72,8 @@
  		  	<dd> <input type="text" placeholder="0000-000-000"></dd>
             <dt>Description</dt>
  		  	<dd> <textarea rows="3"></textarea></dd>
+            <dt>Upload Logo</dt>
+ 		  	<dd> <input type="file" name="form[files][]" multiple></dd>
             <dt></dt>
  		  	<dd> <button type="submit" class="btn">Submit</button></dd>
 		  </dl>         

@@ -6,7 +6,6 @@ class Seed_Task {
     {
 
       // Create 5 charities
-      DB::query("DELETE FROM charities;");
 
       $charities = array();
 
@@ -25,7 +24,7 @@ class Seed_Task {
           $effect->min_amount = $j;
           $j += rand(1,30);
           $effect->max_amount = $j;
-          $effect->description = "With £" . $effect->min_amount . "-" . $effect->max_amount . " you are helping...";
+          $effect->description = 
           $effect->save();
         }
 

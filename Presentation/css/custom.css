@@ -1,0 +1,32 @@
+.listbox {
+	float: left;
+	text-align: left;
+}
+
+h7.head {
+	text-align: left;
+	text-decoration: underline;
+}
+
+h7.content {
+	text-align: left;
+	padding-left: 70px;
+}
+
+.wrapper {
+	float: center;
+}
+
+td.content {
+	padding-left: 70px
+}
+
+td.head {
+	padding-left: 100px
+}
+
+/*
+ul.custom {
+list-style-position:inside;
+}
+*/
