@@ -41,12 +41,6 @@
     <h3 class="muted"><img src="images/logo.png"></h3>
   </div>
   <hr>
-  <div class="hero-unit">
-    <h1>Heading</h1>
-    <p>Tagline</p>
-    <p> <a class="btn btn-primary btn-large"> Learn more </a> </p>
-  </div>
-  <hr>
   <div class="row-fluid marketing"> 
     <!--charity name-->
     <div class="row">
