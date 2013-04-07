@@ -71,7 +71,8 @@ CREATE TABLE donations (
   amount FLOAT,
   start_date TIMESTAMP,
   end_date TIMESTAMP,
-  frequency INT
+  frequency INT,
+  paymill_subscription_id VARCHAR(40)
 );
 
 CREATE TABLE transactions  (
@@ -81,4 +82,12 @@ CREATE TABLE transactions  (
   created_at TIMESTAMP,
   donation_id INT,
   FOREIGN KEY (donation_id) REFERENCES donations (id) ON DELETE CASCADE
+);
+
+CREATE TABLE statistics (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  charity_id INT,
+  day TIMESTAMP,
+  people_total INT,
+  donation_total FLOAT
 );
