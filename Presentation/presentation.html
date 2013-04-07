@@ -1,0 +1,211 @@
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="description" content="SocialPledge">
+		<meta name="author" content="SocialPledge Team">
+		<title>SocialPledge</title>
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Social Pledge</h1>
+					<h3>A Facebook integrated website for charitable donations</h3>
+				</section>
+
+				<section>
+					<h2>Team Members</h2>
+					
+					<table>
+						<tr>
+							<td class="head">- Raphael Sounier:</td>
+							<td class="content">M.Sci IMB (UCL)</td>
+						</tr>
+						<tr>
+							<td class="head">- Ruifei Yu:</td>
+							<td class="content">BEng EE (UCL)</td>
+						</tr>
+						<tr>
+							<td class="head">- Michael Hauser-Raspe:</td>
+							<td class="content">M.Sc CS (UCL)</td>
+						</tr>
+						<tr>
+							<td class="head">- Dolan Miu:</td>
+							<td class="content">M.Sc CS (UCL)</td>
+						</tr>
+						<tr>
+							<td class="head">- Mikko Poutanen</td>
+							<td class="content">M.Sc CS (UCL)</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>Core Ideas of the Project</h2>
+					<ul>
+						<li>Make charitable donations as simple as possible</li>
+						<li>Help charities gain more information about donor base</li>
+						<li>Maximise publicity through Facebook</li>
+						<li>... And help donors feel better about themselves</li>
+					</ul>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<h2>Technologies Used</h2>
+					<br>
+					<h4><u>Goal:&nbsp; &nbsp; Make donations quick, easy, and public</u></h4>
+					<ul>
+						<li><strong>BootStrap:</strong>&nbsp; &nbsp;Sleek Front-End</li>
+						<li><strong>Facebook API:</strong>&nbsp; &nbsp;Integration with Social Media</li>
+						<li><strong>Paymill:</strong>&nbsp; &nbsp;Quick and easy payments</li>
+						<li><strong>Laravel:</strong>&nbsp; &nbsp;Ensure well-structured code</li>
+						<br>
+						<h4>Also:</h4>
+						<li><strong>LAMP Stack:</strong>&nbsp; &nbsp;Server side software</li>
+						<li><strong>GitHub:</strong>&nbsp; &nbsp;Code collaboration</li>
+						<li><strong>reveal.js:</strong>&nbsp; &nbsp;Presentation</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Brief Overview</h2>
+					<p><a href="http://socialpledge.eu">Visit SocialPledge</a></p>
+				</section>
+
+				<section>
+					<h2>Challenges</h2>
+					<ul>
+						<li>Time-Pressure</li>
+						<li>Allocating the right tasks to the right people</li>
+						<li>Learning new technologies</li>
+						<li>Writing code simultaneously</li>
+					</ul>		
+				</section>
+
+				<section>
+					<h2>Coping Strategies</h2>
+					<ul>
+						<li>Communication</li>
+						<li>Red Bull</li>
+						<li>GitHub</li>
+						<li>Beer</li>
+						<li>Well-Defined Tasks</li>
+						<li>Enthusiasm</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Project Take-Aways</h2>
+					<ul>
+						<li>Motivation is key</li>
+						<li>There ARE alternative ways to spend a Saturday night</li>
+						<li>Red Bull really does help</li>
+						<li>Learned many wonderful technologies</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Thank You!</h1>		
+				</section>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+		<!-- Everything below this point is unrelated to the slideshow -->
+
+		<div class="share-reveal" style="display: none; position: absolute; bottom: 10px; left: 50%; margin-left: -205px; z-index: 20;">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-text="reveal.js - an HTML presentation framework from @hakimel." data-url="http://lab.hakim.se/reveal-js" data-count="small" data-related="hakimel"></a>
+
+			<iframe id="facebook-button" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fapp.hakim.se%2Freveal-js%2F&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe>
+
+			<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://lab.hakim.se/reveal-js"></a>
+
+			<a href="https://twitter.com/rvlio" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @rvlio</a>
+		</div>
+
+		<a class="fork-reveal" style="display: none;" href="https://github.com/hakimel/reveal.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+
+		<script>
+		var _gaq = [['_setAccount', 'UA-15240703-1'], ['_trackPageview']];
+		(function(d, t) {
+		var g = d.createElement(t),
+			s = d.getElementsByTagName(t)[0];
+		g.async = true;
+		g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g, s);
+		})(document, 'script');
+		</script>
+
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+		<script type="text/javascript">
+		/* <![CDATA[ */
+			(function() {
+				var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+				t.parentNode.insertBefore(s, t);
+			})();
+		/* ]]> */
+		</script>
+
+		<script>
+			if( !navigator.userAgent.match( /iphone|ipod|android|ipad|blackberry/gi ) && !!document.querySelector ) {
+				document.querySelector( '.share-reveal' ).style.display = 'block';
+				document.querySelector( '.fork-reveal' ).style.display = 'block';
+			}
+		</script>
+
+	</body>
+</html>
