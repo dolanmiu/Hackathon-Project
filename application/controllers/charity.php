@@ -37,8 +37,14 @@ class Charity_Controller extends Base_Controller
   public function action_map($id)
   {
     $charity = Charity::find($id);
+
+    $q="select u.location from charities c join donations d on c.id = d.charity_id join users u on u.id = d.user_id where c.id=".$id;
+    $ptarray=DB::query();
     return View::make('charity.map')
-    ->with('charity', $charity); 
+      ->with('points', $ptarray)
+      ->with('charity', $charity); 
+
+
   }
 
 

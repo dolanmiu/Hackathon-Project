@@ -38,21 +38,15 @@ src="https://maps.googleapis.com/maps/api/js?libraries=geometry,visualization&ke
 <script type="text/javascript">
 /* Data points defined as an array of LatLng objects */
 
+    var heatmapData = [
+        <?php foreach($points as $p):
+            $split = explode(',', $p);
+            echo "new google.maps.LatLng($split[0], $split[1]),"
+        endforeach;?>
+    ];
 	var heatmapData = [
 		new google.maps.LatLng(37.782, -122.447),
-    new google.maps.LatLng(37.782, -122.445),
-    new google.maps.LatLng(37.782, -122.443),
-    new google.maps.LatLng(37.782, -122.441),
-    new google.maps.LatLng(37.782, -122.439),
-    new google.maps.LatLng(37.782, -122.437),
-    new google.maps.LatLng(37.782, -122.435),
-    new google.maps.LatLng(37.785, -122.447),
-    new google.maps.LatLng(37.785, -122.445),
-    new google.maps.LatLng(37.785, -122.443),
-    new google.maps.LatLng(37.785, -122.441),
-    new google.maps.LatLng(37.785, -122.439),
-    new google.maps.LatLng(37.785, -122.437),
-    new google.maps.LatLng(37.785, -122.435)
+    
 	];
 
 	var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
