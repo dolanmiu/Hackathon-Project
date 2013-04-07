@@ -33,8 +33,15 @@
 
   <body>
   <div class="container">
+        @if( Auth::check() )
 
+        <p style='text-align:right;'>
+          <strong>Hello, {{ Auth::user()->first_name }}!</strong>
+        </p>
+
+        @endif
       <div class="masthead">
+
         <ul class="nav nav-pills pull-right">
            <li @if(isset($link) && $link=='home')
             class='active' 
@@ -51,6 +58,7 @@
            @endif
 <!--            <li><a href="about.php">About</a></li>
  -->        </ul>
+
          <h3 class="muted"><a href="{{ URL::home() }}"><img src="{{ URL::to_asset('images/logo.png') }}"></a></h3>
       </div>
 

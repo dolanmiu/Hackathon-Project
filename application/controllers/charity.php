@@ -14,8 +14,6 @@ class Charity_Controller extends Base_Controller
     return View::make('charity.register');  
   }
 
-
-
   public function action_view($id)
   {
     $charity = Charity::find($id);
@@ -130,7 +128,7 @@ class Charity_Controller extends Base_Controller
         
         Session::flash('amount_donated', $amount);
 
-        return Redirect::to_action('');
+        return Redirect::to_action('charity@view', array($charity_id));
 
       } catch (FacebookApiException $e) {
         error_log($e);
