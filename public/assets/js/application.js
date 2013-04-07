@@ -1,13 +1,20 @@
 // Some general UI pack related JS
 
-
-
 $(document).ready(function() {
 
     $('#donationType').dropkick({
       change: function (value, label) {
         console.log(value,label);
         var showSlider = $('#donationType').val() == "recurring";
+        if(!showSlider)
+        {
+            $('.monthly').parents('.form-row').hide();
+        }
+        else
+        {
+            $('.monthly').parents('.form-row').show();
+
+        }
         $('#frequencySlider').toggle(showSlider);
       }
     });

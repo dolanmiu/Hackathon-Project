@@ -30,7 +30,7 @@ class Charity_Controller extends Base_Controller
     $charity = Charity::find($id);
 
     $token = $_POST['paymillToken'];
-      $currency = $_POST['currency'];
+      $currency = "EUR"; //$_POST['currency'];
       $amount = $_POST['amount'];
       $email = Input::get('email');
       $card_holdername = Input::get('card-holdername');
