@@ -70,6 +70,13 @@ class Paymill{
         return $creditcard;
     }
 
+    static function deleteSubscription($subscriptionid) {
+        $apiKey        = Config::get('paymill.api_key');
+        $apiEndpoint   = Config::get('paymill.api_host');
+        $subscriptionsObject = new Services_Paymill_Subscriptions($apiKey, $apiEndpoint);
+        $subscription        = $subscriptionsObject->delete($subscriptionid);
+
+    }
     static function test($client) {
         echo '<pre>';
         print_r($client);

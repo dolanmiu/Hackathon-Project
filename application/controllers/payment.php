@@ -52,12 +52,6 @@ class Payment_Controller extends Base_Controller {
 
     Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
 
-    // set_include_path(implode(PATH_SEPARATOR, array(
-    //   realpath(realpath(dirname(__FILE__)) . '/application/libraries/Paymill-PHP-master/lib'),
-    //   get_include_path(),
-    // )));
-    // echo "here";
-
     $token = $_POST['paymillToken'];
     $currency = $_POST['currency'];
     $amount = $_POST['amount'];
@@ -71,8 +65,6 @@ class Payment_Controller extends Base_Controller {
         'currency'    => $currency,   // ISO 4217
         'token'       => $token,
         'description' => 'Test Transaction',
-        // 'client'      => 
-        // 'email' => 'person@mail.com'
       );
       $transaction = $transactionsObject->create($params);
 
@@ -84,12 +76,6 @@ class Payment_Controller extends Base_Controller {
     public function action_submitsubscription()
   {
     Autoloader::directories(array(path('app').'libraries/Paymill-PHP-master/lib'));
-
-    // set_include_path(implode(PATH_SEPARATOR, array(
-    //   realpath(realpath(dirname(__FILE__)) . '/application/libraries/Paymill-PHP-master/lib'),
-    //   get_include_path(),
-    // )));
-    // echo "here";
 
     $token = $_POST['paymillToken'];
     $currency = Input::get('currency');
