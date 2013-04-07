@@ -48,19 +48,10 @@ Route::get('test', function(){
   if($uid){
     try {
       // Proceed knowing you have a logged in user who's authenticated.
-      $user_profile = $facebook->api('/me');
-      //print_r($user_profile);
+      $location = "". $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
+      print_r($location);
 
-      $attachment = array(
-        'message' => "Usern",
-        'name' => "Name",
-        'link' => "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bananas.jpg",
-        'description' => "Usernam",
-        'picture'=> "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bananas.jpg",
-        );
-      //$two = $facebook->api('/'.$uid.'/feed', 'POST', $attachment);
-
-      //print_r($two);
+      
     
     } catch (FacebookApiException $e) {
       error_log($e);

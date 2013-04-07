@@ -15,7 +15,9 @@ CREATE TABLE charities (
   country VARCHAR(30),
   email VARCHAR(40),
   tel_no VARCHAR(20),
-  description VARCHAR(500)
+  description VARCHAR(500),
+  donation_total FLOAT,
+  people_total INT
 );
 
 CREATE TABLE users (
