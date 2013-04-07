@@ -78,7 +78,7 @@ class Charity_Controller extends Base_Controller
         }
         else
         {
-          $client = Paymill::clientFactoryMethod($email,$card_holdername);
+          $client = Paymill::clientFactoryMethod($email, $card_holdername);
           $current_user->paymill_id = $client['id'];
           $current_user->save();
         }
