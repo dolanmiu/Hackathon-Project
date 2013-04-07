@@ -19,8 +19,6 @@
           <h3>Please Donate</h3>
           <div class="span12">
            <form id='payment-form' method='post' action='{{ URL::to_action('charity@donate', array($charity->id)) }}'>
-           <!-- <form id="payment-form" action="<?php echo URL::to_action("payment@submitsubscription");?>" method="POST"> -->
-
 
             <!-- Button to trigger modal -->
              
@@ -31,7 +29,6 @@
                 <h3 id="myModalLabel">Modal header</h3>
               </div>
               <div class="modal-body">
-
 
 
                <!-- Do not put "name" in input tags, safety measure -->
@@ -75,7 +72,7 @@
               </div>
             </div>
 
-
+          </form>
 
 
 
@@ -110,7 +107,6 @@
               </dd>
             </dl>
             </div>
-          </form>
 
         </div>
       </div>
@@ -166,7 +162,6 @@
             }
 
             $("#payment-form").submit(function (event) {
-
                 // Absenden Button deaktivieren um weitere Klicks zu vermeiden
                 $('.submit-button').attr("disabled", "disabled");
 
