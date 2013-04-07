@@ -91,12 +91,15 @@ class Charity_Controller extends Base_Controller
         {
           $client = Paymill::clientFactoryMethod($email, $card_holdername);
           $current_user->paymill_id = $client['id'];
+          $charity->people_total+=1;
           $current_user->save();
         }
         // Sanity check
         $offer = Paymill::offerFactoryMethod($amount*100,$currency,$monthly." MONTH", "offer1");
         $payment = Paymill::paymentFactoryMethod($token, $client);
         $subscription = Paymill::subscriptionFactoryMethod($client, $offer, $payment);
+        $charity->donation_total+=$amount;
+        $charity->save();
 
 
         $donation = new Donation;
