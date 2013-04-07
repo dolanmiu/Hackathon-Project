@@ -19,7 +19,7 @@
 <div class="featurette">
   <h2 class="featurette-heading">Donate money. <span class="muted">Do good, feel good.</span></h2>
   <a class="btn btn-large btn-success" href="{{ URL::to_action('charity@index') }}">I want to Donate</a>
-  <p class="lead">By simply click on button above, find out the charity you are interested in and support them. Your personal information is secure, and your donation will be shared on Facebook to spread the love! We believe helping others is the ultimate form of positive karma. Do good for us all, whether it be saving a staring child, or contributing to the cure to cancer.</p>
+  <p class="lead">By simply clicking on button above, find out the charity you are interested in and support them. Your personal information is secure, and your donation will be shared on Facebook to spread the love! We believe helping others is the ultimate form of positive karma. Do good for us all, whether it be saving a starving child, or contributing to the cure to cancer.</p>
 </div>
 <hr>
 <div class="indexbanner">
@@ -41,7 +41,7 @@
     <!-- /.span4 -->
     <div class="span4"> <img class="img-circle" data-src="holder.js/140x140">
       <h2>I am still not sure...</h2>
-      <p>What are you waiting for! Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <p>What are you waiting for! Here are plenty of registered charities needs your help. Sign up and make your effort to the society. Sharing is caring, caring is fulfilling.</p>
       <p><a class="btn" href="#">View details &raquo;</a></p>
     </div>
     <!-- /.span4 --> 

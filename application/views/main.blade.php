@@ -50,7 +50,7 @@
            <li @if(!isset($link))
             class='active'
             @endif
-            ><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
+            ><a href="{{ URL::to_action('charity@index') }}">All Charities</a></li>
            @if(! Auth::check() )
              <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
            @else
@@ -65,37 +65,45 @@
       <hr>
 
       @yield('content')
+      
+      <hr>
 
-      <div class="footer">
-        <div class="row">
-          <div class="span3">
-            <h3>Contact Us</h3>
-            <address>
-            <strong>Twitter, Inc.</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
-            <address>
-            <strong>Full Name</strong><br>
-            <a href="mailto:#">first.last@example.com</a>
-            </address>
-          </div>
-          <div class="span3">
-            <h3>Site Map</h3>
-            <ul>
-              <li class="active"><a href="{{ URL::home() }}">Home</a></li>
-              <li><a href="{{ URL::to_action('charity@index') }}">All Charites</a></li>
-              <li><a href="{{ URL::to_action('auth@session', array('facebook')) }}">Sign Up</a></li>
-              <li><a href="{{ URL::to_action('pages@about') }}">About</a></li>
-            </ul>
-          </div>
-          <div class="span3">
-            <h3>FAQ</h3>
-          </div>
-        </div>
-        <p>&copy; Social Pledge 2013</p>
-      </div>
+<div class="footer">
+  <div class="row">
+    <div class="span3">
+      <h3>Contact Us</h3>
+      <address>
+      <strong>Social Pledge Inc.</strong><br>
+      Gower St, UCL<br>
+      London, Gower St<br>
+      <abbr title="Phone">P:</abbr> (020) 7679-2000
+      </address>
+      <address>
+      <strong>Full Name</strong><br>
+      <a href="mailto:#">social.pledge@ucl.ac.uk</a>
+      </address>
+    </div>
+    <div class="span3">
+      <h3>Site Map</h3>
+      <ul>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="allcharities.html">All Charities</a></li>
+         @if(! Auth::check() )
+             <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
+           @else
+            <li><a href="{{ URL::to_action('auth@logout') }}">Sign out</a></li>
+           @endif
+      </ul>
+    </div>
+    <div class="span3">
+      <h3>Supporters</h3>
+      <img src="/assets/img/level39logo.jpg" />
+      <img src="/assets/img/ucllogo.jpg" />
+    </div>
+  </div>
+  <p>&copy; Social Pledge 2013</p>
+</div>
+
 
     </div> <!-- /container -->
 
