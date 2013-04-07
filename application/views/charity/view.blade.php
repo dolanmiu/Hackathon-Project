@@ -11,7 +11,7 @@
     <!--charity name-->
     <div class="row">
       <div class="span10 offset1">
-        <div class="span2"> <img src="http://appsforipads.net/wp-content/uploads/2011/01/Free_Google-150x150.png" class="img-polaroid" width="150" height="150"> </div>
+        <div class="span2"> <img src="{{ $charity->image }}" class="img-polaroid" width="150"> </div>
         <div class="span8">
 
           @if(Session::has('amount_donated'))
