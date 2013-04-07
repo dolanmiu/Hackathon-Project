@@ -36,7 +36,7 @@
         @if( Auth::check() )
 
         <p style='text-align:right;'>
-          <strong>Hello, {{ Auth::user()->first_name }}!</strong>
+          <strong>Hello, {{ Auth::user()->first_name  }}!</strong>
         </p>
 
         @endif
