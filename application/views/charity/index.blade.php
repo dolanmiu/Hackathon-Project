@@ -18,8 +18,8 @@
         
           <dt><h2><a href="{{ URL::to_action('charity@view', array($c->id)) }}">{{ $c->name }}</a></h2></dt>
           <dd><h4>description</h4></dd>
-          <dd><strong>Total donators:</strong></dd>
-          <dd><strong>Donated amount:</strong></dd>
+          <dd><strong>Total donators: {{ $c->people_total }}</strong></dd>
+          <dd><strong>Donated amount: {{ $c->donation_total }}</strong></dd>
         
       @endforeach
 
