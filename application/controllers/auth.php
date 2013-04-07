@@ -34,8 +34,8 @@ class Auth_Controller extends Controller {
 
               Session::put("access_token", $token);
 
-              $user = $provider->get_user_info($token);
-              $uid = (int) $user['uid'];
+              $fbuser = $provider->get_user_info($token);
+              $uid = (int) $fbuser['uid'];
               $existing_user = User::where('fb_uid', '=', $uid)->first();
 
               if($existing_user)
@@ -47,7 +47,7 @@ class Auth_Controller extends Controller {
               {
                 $user = new User;
                 $user->fb_uid = $uid;
-                $user->first_name = $user['first_name'];
+                $user->first_name = explode(" ", $fbuser['name'])[0];
                 $user->save();
               }
               
