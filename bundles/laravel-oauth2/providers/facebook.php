@@ -32,6 +32,7 @@ class OAuth2_Provider_Facebook extends OAuth2_Provider
 			'uid' => $user->id,
 			'nickname' => $user->username,
 			'name' => $user->name,
+			'first_name' => $user->first_name,
 			'email' => $user->email,
 			'location' => $user->hometown->name,
 			//'description' => $user->bio,
