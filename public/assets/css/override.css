@@ -11,6 +11,10 @@ body {
 .container > hr {
 	margin: 0px 0;
 }
+
+.charity-list {
+	margin: 0 0 30px 0;
+}
 /* Main marketing message and sign up button */
 .jumbotron {
 	color: #f9f9f9;
