@@ -29,20 +29,17 @@
   <div class="row">
     <div class="span3"> <img class="img-circle" data-src="holder.js/140x140">
       <h2>Who are we?</h2>
-      <p>SocialPledge is a novel way for charities to accept one-off and regular pledge donations. It allows users to share their charitable donations on their Facebook timeline, and thus increases public awareness of the projects these donations are being used for. Additionally it provides charities with valuable demographic information about their donor base thanks to the integration with Facebook.</p>
-      <p><a class="btn" href="#">View details &raquo;</a></p>
+      <p style='min-height:200px'>SocialPledge is a novel way for charities to accept one-off and regular pledge donations. It allows users to share their charitable donations on their Facebook timeline, and thus increases public awareness of the projects these donations are being used for. Additionally it provides charities with valuable demographic information about their donor base thanks to the integration with Facebook.</p>
     </div>
     <!-- /.span4 -->
     <div class="span3"> <img class="img-circle" data-src="holder.js/140x140">
       <h2>Why?</h2>
-      <p>Because we believe in giving. We believe helping others is the greatest form of positive karma. Spread the word, donate to potentially save a life and shape the world for the greater good! Motivate your circle of friends to give, help others. Happiness is contagious!</p>
-      <p><a class="btn" href="#">View details &raquo;</a></p>
+      <p style='min-height:200px'>Because we believe in giving. We believe helping others is the greatest form of positive karma. Spread the word, donate to potentially save a life and shape the world for the greater good! Motivate your circle of friends to give, help others. Happiness is contagious!</p>
     </div>
     <!-- /.span4 -->
     <div class="span4"> <img class="img-circle" data-src="holder.js/140x140">
       <h2>I am still not sure...</h2>
-      <p>What are you waiting for! Here are plenty of registered charities needs your help. Sign up and make your effort to the society. Sharing is caring, caring is fulfilling.</p>
-      <p><a class="btn" href="#">View details &raquo;</a></p>
+      <p style='min-height:200px'>What are you waiting for! Here are plenty of registered charities needs your help. Sign up and make your effort to the society. Sharing is caring, caring is fulfilling.</p>
     </div>
     <!-- /.span4 --> 
   </div>

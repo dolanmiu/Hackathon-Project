@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +35,7 @@
         @if( Auth::check() )
 
         <p style='text-align:right;'>
-          <strong>Hello, {{ Auth::user()->first_name }}!</strong>
+          <strong>Hello, {{ Auth::user()->first_name  }}!</strong>
         </p>
 
         @endif
@@ -65,9 +64,8 @@
       <hr>
 
       @yield('content')
-      
-      <hr>
 
+	<hr />
 <div class="footer">
   <div class="row">
     <div class="span3">
@@ -86,13 +84,8 @@
     <div class="span3">
       <h3>Site Map</h3>
       <ul>
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="allcharities.html">All Charities</a></li>
-         @if(! Auth::check() )
-             <li><a href="{{ URL::to('auth/session/facebook') }}">Sign In</a></li>
-           @else
-            <li><a href="{{ URL::to_action('auth@logout') }}">Sign out</a></li>
-           @endif
+        <li><a href="/">Home</a></li>
+        <li><a href="/charity/index">All Charities</a></li>
       </ul>
     </div>
     <div class="span3">

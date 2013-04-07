@@ -37,15 +37,18 @@ class Auth_Controller extends Controller {
               $fbuser = $provider->get_user_info($token);
               $uid = (int) $fbuser['uid'];
               $existing_user = User::where('fb_uid', '=', $uid)->first();
+                $name_split = explode(" ", $fbuser['name']); 
 
               if($existing_user)
               {
+                if($existing_user->first_name == NULL || $existing_user->first_name == '')
+                  $existing_user->first_name == $name_split[0];
+                  $existing_user->save();
                 Auth::login($existing_user->id);
               }
               
               else
               {
-		            $name_split = explode(" ", $fbuser['name']); 
                 $user = new User;
                 $user->fb_uid = $uid;
                 $user->email = $fbuser['email'];
