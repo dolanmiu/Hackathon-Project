@@ -16,7 +16,7 @@
 
       @foreach($charities as $c)
         
-          <dt><h2><a href="{{ URL::to_action('charity@donate', array($c->id)) }}">{{ $c->name }}</a></h2></dt>
+          <dt><h2><a href="{{ URL::to_action('charity@view', array($c->id)) }}">{{ $c->name }}</a></h2></dt>
           <dd><h4>description</h4></dd>
           <dd><strong>Total donators:</strong></dd>
           <dd><strong>Donated amount:</strong></dd>

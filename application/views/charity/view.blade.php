@@ -18,8 +18,8 @@
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           <h3>Please Donate</h3>
           <div class="span12">
-<!--           <form method='post' action='{{ URL::to_action('charity@donate', array($charity->id)) }}'>
- -->          <form id="payment-form" action="<?php echo URL::to_action("payment@submitsubscription");?>" method="POST">
+           <form method='post' action='{{ URL::to_action('charity@donate', array($charity->id)) }}'>
+           <!-- <form id="payment-form" action="<?php echo URL::to_action("payment@submitsubscription");?>" method="POST"> -->
 
 
             <!-- Button to trigger modal -->
@@ -84,11 +84,10 @@
             <dl class="dl-horizontal">
               <dt>Type of donation</dt>
               <dd>
-                <select>
-                  <option> single donation </option>
-                  <option> monthly donation </option>
+                <select name="donationType" id="donationType">
+                  <option value='single'>single donation </option>
+                  <option value='recurring'>monthly donation </option>
                 </select>
-                <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
 
               </dd>
               <dt>Amount</dt>
@@ -97,14 +96,16 @@
                   <input class="span10" id="appendedPrependedInput" type="text" name='amount' value='10'>
                   <span class="add-on">.00</span> </div>
               </dd>
+              <div id="frequencySlider">
               <dt>How often (Monthly only)</dt>
-              <dd>
-                <input type="text" class="sl1" value="" data-slider-min="1" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
-              </dd>
+                <dd>
+                  <input type="text" class="sl1" value="" data-slider-min="1" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="show">
+                </dd>
+              </div>
               <dt></dt>
               <dd>
-              <div class="span1 offset8">
-                <button type="submit" class="btn">Submit</button>
+                <div class="span1 offset8">
+                  <a href="#myModal" role="button" class="btn" data-toggle="modal">Submit</a>
                 </div>
               </dd>
             </dl>
@@ -119,8 +120,19 @@
   </div>
 
   @endsection
-
   @section('scripts')
+    
+    <script>
+      $(function(){
+        // $('#dk_container_donationType').on('mouseup', function(){
+        //   var showSlider = $('#donationType').val() == "recurring";
+        //   console.log($('#donationType').val())
+        //   $('#frequencySlider').toggle(showSlider);
+        // });
+      });
+    </script>
+
+
     <script type="text/javascript">
         var PAYMILL_PUBLIC_KEY = '891010255736d9d46d379a5f39499223';
 
