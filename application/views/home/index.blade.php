@@ -12,13 +12,13 @@
 <hr class="featurette-divider">
 <div class="featurette"> <img class="featurette-image pull-right" src="assets/img/homepage-big1.jpg">
   <h2 class="featurette-heading">Raise money. <span class="muted">To support those in need.</span></h2>
-  <a class="btn btn-large btn-success" href="#">I am a Charity</a>
+  <a class="btn btn-large btn-success" href="{{ URL::to_action('charity@create') }}">I am a Charity</a>
   <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 </div>
 <hr class="featurette-divider">
 <div class="featurette">
   <h2 class="featurette-heading">Donate money. <span class="muted">See for yourself.</span></h2>
-  <a class="btn btn-large btn-success" href="#">I want to Donate</a>
+  <a class="btn btn-large btn-success" href="{{ URL::to_action('charity@index') }}">I want to Donate</a>
   <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 </div>
 <hr>
