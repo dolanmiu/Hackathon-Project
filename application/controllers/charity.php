@@ -11,7 +11,20 @@ class Charity_Controller extends Base_Controller
 
   public function action_create()
   {
-    return View::make('charity.register');  
+    if(Input::get('name'))
+    {
+      $charity = new Charity;
+      $charity->create(
+        array('name' => Input::get('name'),
+        'email'=>Input::get('email'),
+        'description'=>Input::get('description'),
+        'tel_no'=>Input::get('tel_no'),
+        'city'=>Input::get('city'),
+      ));
+      return Redirect::to_action('charity@index');
+    }  
+
+    return View::make('charity.register');
   }
 
   public function action_view($id)
@@ -30,7 +43,7 @@ class Charity_Controller extends Base_Controller
     $charity = Charity::find($id);
 
     $token = $_POST['paymillToken'];
-      $currency = $_POST['currency'];
+      $currency = "EUR"; //$_POST['currency'];
       $amount = $_POST['amount'];
       $email = Input::get('email');
       $card_holdername = Input::get('card-holdername');
