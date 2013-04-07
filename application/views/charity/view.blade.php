@@ -11,7 +11,7 @@
     <!--charity name-->
     <div class="row">
       <div class="span10 offset1">
-        <div class="span2"> <img src="http://appsforipads.net/wp-content/uploads/2011/01/Free_Google-150x150.png" class="img-polaroid" width="150" height="150"> </div>
+        <div class="span2"> <img src="{{ $charity->image }}" class="img-polaroid" width="150"> </div>
         <div class="span8">
 
           @if(Session::has('amount_donated'))
@@ -37,7 +37,7 @@
             <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">Modal header</h3>
+                <h3 id="myModalLabel">Card information</h3>
               </div>
               <div class="modal-body">
 
