@@ -9,22 +9,34 @@ class Charity_Controller extends Base_Controller
     return View::make('charity.index')->with('charities', $charities); 
   }
 
-  public function action_register()
+  public function action_create()
   {
     return View::make('charity.register');  
   }
 
+
+
+  public function action_view($id)
+  {
+    $charity = Charity::find($id);
+    return View::make('charity.view')
+      ->with('charity', $charity); 
+  }
+
+
+
   public function action_donate($id)
   {
-    if(Input::get('amount'))
-    {
-      
-    }
+    $charity = Charity::find($id);
 
-   $charity = Charity::find($id);
-   return View::make('charity.single')
-    ->with('charity', $charity); 
+    // INSERT CODE TO PROCESS PAYMENT HERE! :)
+
+
+    echo $id;
+    //return Redirect::back();
   }
+
+
 
 
   public function action_edit($id)
