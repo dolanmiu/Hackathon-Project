@@ -14,7 +14,7 @@ class Seed_Task {
         $charity = new Charity;
         $charity->name = "Charity #" . $i;
         $charity->save();
-        $charities[] = $charity->id;
+        $charities[$charity->id] = array('users'=>0, 'amount'=>0);
         
         $j = 0;
         while($j < 200)
@@ -42,7 +42,9 @@ class Seed_Task {
             $donation = new Donation;
             $donation->amount = ($k+1) * 10 * rand(1,10)/10;
             $donation->user_id = $user->id;
-            $donation->charity_id = $charities[array_rand($charities)];
+            $donation->charity_id = array_rand($charities);
+            
+
             $donation->frequency = rand(1,3);
             $donation->save();
           }

@@ -41,34 +41,41 @@ Route::get('/', function()
 
 
 Route::get('test', function(){
-  // echo Session::get("token", "no token");
-  // $facebook = IoC::resolve('facebook-sdk');
-  // $uid = $facebook->getUser();
+  
+$facebook = IoC::resolve('facebook-sdk');
+$uid = $facebook->getUser();
 
-  // if($uid){
-  //   try {
-  //     // Proceed knowing you have a logged in user who's authenticated.
-  //     $location = "". $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
-  //     print_r($location);
+if($uid){
+try {
+// Proceed knowing you have a logged in user who's authenticated.
+$user_profile = $facebook->api('/me');
+//print_r($user_profile);
 
-      
-    
-  //   } catch (FacebookApiException $e) {
-  //     error_log($e);
-  //     print_r($e);
-  //     $user = null;
-  //   }
-  // }
-  // else{
-  //   $loginUrl = $facebook->getLoginUrl();
-  //   return Redirect::to($loginUrl);
-  // };
+$req = $facebook->api('/'.$uid.'/location');
+
+Session::flash('amount_donated', $amount);
+
+return Redirect::to_action('');
+
+} catch (FacebookApiException $e) {
+error_log($e);
+print_r($e);
+$user = null;
+}
+}
+else{
+$loginUrl = $facebook->getLoginUrl();
+return Redirect::to($loginUrl);
+}
+
   $city = 'Cambridge, Cambridgeshire';
- echo Google::lookup($city);
-  echo 'done';
+  Google::lookup($city);
+
+  
 
 });
 
+Route::controller('maps');
 Route::controller('auth');
 Route::controller('donate');
 Route::controller('charity');

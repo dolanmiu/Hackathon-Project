@@ -34,6 +34,12 @@ class Charity_Controller extends Base_Controller
     ->with('charity', $charity); 
   }
 
+  public function action_map($id)
+  {
+    $charity = Charity::find($id);
+    return View::make('charity.map')
+    ->with('charity', $charity); 
+  }
 
 
   public function action_donate($id)

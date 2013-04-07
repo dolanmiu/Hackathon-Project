@@ -31,5 +31,6 @@ static function lookup($string){
 return $array['latitude'].', '.$array['longitude'];
 
 }
+
 }
  
