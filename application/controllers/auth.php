@@ -48,11 +48,17 @@ class Auth_Controller extends Controller {
               }
               
               else
-              {
+
+             {
+               	$name_split = explode(" ", $fbuser['name']);
+                $location=$fbuser['location'];
+                $location=Google::lookup($location);
                 $user = new User;
                 $user->fb_uid = $uid;
                 $user->email = $fbuser['email'];
-                $user->first_name = $name_split[0]; 
+                $user->first_name = $name_split[0];
+                $user->location=$location;
+
                 $user->save();
               }
               
