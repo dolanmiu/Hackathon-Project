@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <meta charset="utf-8">
     <title>Social Pledge - Sharing is Caring</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,56 +34,38 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-           <li><a href="index.php">Home</a></li>
+           <li class="active"><a href="index.php">Home</a></li>
            <li><a href="allcharities.php">All Charites</a></li>
-           <li class="active"><a href="#">Sign In</a></li>
+           <li><a href="signin.php">Sign In</a></li>
            <li><a href="about.php">About</a></li>
         </ul>
         <h3 class="muted"><img src="images/logo.png">Social Pledge</h3>
       </div>
+
+      <hr>
+
+<div class="hero-unit">
+  <h1>Thank you for your donation!</h1>
+  <p>It means a lot to us.</p>
+</div>
+
       <hr>
 
       <div class="row-fluid">
-      <div class="row">
-      <form>
-        <div class="span10 offset1">
-        <h1>Charity Registration</h1>
-        <h3>Basic Info</h3>
-           <dl class="dl-horizontal">
- 		  	<dt>Charity Name</dt>
- 		  	<dd> <input type="text" placeholder="Charity Name"></dd>
-		  </dl>       
-          <dl class="dl-horizontal">
- 		  	<dt>Street Name</dt>
- 		  	<dd> <input type="text" placeholder="11 Blogs Lane"></dd>
-            <dt></dt>
- 		  	<dd> <input type="text" placeholder="Address"></dd>
-            <dt>Town</dt>
- 		  	<dd> <input type="text" placeholder="Blog Town"></dd>
-            <dt>Postcode</dt>
- 		  	<dd> <input type="text" placeholder="W2 HR4"></dd>
-		  </dl>
-          <h3>Extra Bits</h3>
-           <dl class="dl-horizontal">
- 		  	<dt>Email</dt>
- 		  	<dd> <input type="text" placeholder="joe.bloggs@email.com"></dd>
-            <dt>Telephone</dt>
- 		  	<dd> <input type="text" placeholder="0000-000-000"></dd>
-            <dt>Description</dt>
- 		  	<dd> <textarea rows="3"></textarea></dd>
-            <dt>Upload Logo</dt>
- 		  	<dd> <input type="file" name="form[files][]" multiple></dd>
-            <dt></dt>
- 		  	<dd> <button type="submit" class="btn">Submit</button></dd>
-		  </dl>         
-        </div>
-        <div class="span1"></div>
-      </form>
-       </div>
-	</div>
-      <hr>
+      <div class="span10 offset1">
+      <h1>You have donated £XXX to</h1>
+      <h4>CharityX</h4>
+      </div>
+      <div class="span8 offset1">
+      	<a href="index.php" class="btn btn-large btn-block btn-primary">Return back home</a>
+      </div>
+      </div>
+        
+      </div>
 
-	<?php include 'footer.html'; ?>
+      <hr>
+    <?php include 'footer.html'; ?>
+      
 
     </div> <!-- /container -->
 

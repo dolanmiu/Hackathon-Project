@@ -36,9 +36,18 @@ img {
 	width: auto	9;
 	height: auto;
 	vertical-align: middle;
-	max-height:none;
+	max-width:100%;
 	border: 5;
 	-ms-interpolation-mode: bicubic;
+}
+
+.indexbanner img {
+	max-width:none;
+	width: auto\9;
+ 	height: auto;
+  	vertical-align: middle;
+  	border: 0;
+  	-ms-interpolation-mode: bicubic;
 }
 
 .screenbanner {

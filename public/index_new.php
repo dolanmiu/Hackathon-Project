@@ -48,7 +48,7 @@
 </div>
 <hr class="featurette-divider">
 <div class="featurette">
-  <h2 class="featurette-heading">Donate money. <span class="muted">See for yourself.</span></h2>
+  <h2 class="featurette-heading">Donate money. <span class="muted">Do good, feel good.</span></h2>
   <a class="btn btn-large btn-success" href="#">I want to Donate</a>
   <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 </div>
